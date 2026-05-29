@@ -2,9 +2,9 @@
   <footer :style="{ padding: '40px 0 64px', textAlign: 'center' }">
     <div class="container">
       <div :style="{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }">
-        <img src="/logo-mark.svg" width="28" height="28" alt="Dental Clinic" />
+        <img src="~/assets/logo-mark.svg" width="28" height="28" alt="Clínica Dental" />
         <span :style="{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '18px', color: 'var(--ink-900)', letterSpacing: '-0.01em' }">
-          Dental Clinic
+          Clínica Dental
         </span>
       </div>
 
@@ -27,14 +27,14 @@
       </div>
 
       <div :style="{ fontSize: '12px', color: 'var(--ink-400)', fontFamily: 'var(--font-mono)' }">
-        © 2026 Dental Clinic · All rights reserved.
+        © 2026 Clínica Dental · Todos os direitos reservados.
       </div>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
-const footerLinks = ['About Us', 'Pricing', 'Stories', 'Support', 'Privacy', 'Terms']
+const footerLinks = ['Sobre Nós', 'Preços', 'Histórias', 'Suporte', 'Privacidade', 'Termos']
 const socialIcons = ['𝕏', '◎', 'ig', 'in']
 
 const socialStyle = {
