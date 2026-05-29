@@ -1,0 +1,313 @@
+/* ============================================================
+   Dental Clinic — Design Tokens
+   Drop this file into any HTML to get the brand foundations.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap');
+
+:root {
+  /* ---------- Color: brand ---------- */
+  --primary-50:  #F1EEFF;
+  --primary-100: #E3DEFF;
+  --primary-200: #C6BCFF;
+  --primary-300: #A496FF;
+  --primary-400: #8775FF;
+  --primary-500: #6E5BFF;   /* ← canonical brand violet */
+  --primary-600: #5A48E8;   /* hover */
+  --primary-700: #4736C2;
+  --primary-800: #342896;
+
+  /* ---------- Color: neutral surfaces ---------- */
+  --bg-page:     #E9E8E6;   /* warm light gray — page background */
+  --bg-card:     #F5F4F2;   /* slightly lighter, where cards sit */
+  --bg-card-hi:  #FFFFFF;   /* hover/raised card */
+  --bg-inset:    #ECEAE5;   /* recessed area inside a card */
+
+  /* ---------- Color: ink ---------- */
+  --ink-900:     #1A1A1F;   /* headlines */
+  --ink-700:     #2E2E36;
+  --ink-500:     #5C5C66;   /* body */
+  --ink-400:     #7A7A84;
+  --ink-300:     #9A9AA3;   /* meta, quiet */
+  --ink-200:     #C9C7C1;
+
+  /* ---------- Color: lines ---------- */
+  --border:      #E2E0DB;
+  --border-strong: #D4D2CC;
+
+  /* ---------- Color: semantic ---------- */
+  --success:     #1F8A5B;
+  --warning:     #D97757;
+  --danger:      #D14B4B;
+
+  /* ---------- Color: glyph accents (full-saturation, AA on cream) ---------- */
+  --glyph-violet: #6E5BFF;
+  --glyph-cyan:   #2EB3BF;
+  --glyph-pink:   #E45CA8;
+  --glyph-mint:   #2EA572;
+  --glyph-amber:  #E0974A;
+  --glyph-ink:    #1A1A1F;
+
+  /* ---------- Color: imagery accents (iridescent) ---------- */
+  --iri-violet:  #8A6BFF;
+  --iri-cyan:    #6EDBE0;
+  --iri-pink:    #FF6EC4;
+  --iri-mint:    #B7F0C6;
+
+  /* ---------- Type: families ---------- */
+  --font-display: 'Sora', 'Inter Tight', system-ui, -apple-system, sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* ---------- Type: sizes (clamp for fluid scale) ---------- */
+  --fs-display:   clamp(48px, 6.4vw, 88px);
+  --fs-h1:        clamp(40px, 4.8vw, 64px);
+  --fs-h2:        clamp(28px, 3vw, 40px);
+  --fs-h3:        clamp(22px, 2.2vw, 28px);
+  --fs-lead:      clamp(17px, 1.4vw, 19px);
+  --fs-body:      16px;
+  --fs-small:     14px;
+  --fs-micro:     12px;
+
+  /* ---------- Type: weights ---------- */
+  --fw-regular:   400;
+  --fw-medium:    500;
+  --fw-semibold:  600;
+  --fw-bold:      700;
+
+  /* ---------- Type: leading & tracking ---------- */
+  --lh-display:   1.04;
+  --lh-heading:   1.12;
+  --lh-body:      1.55;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.08em;
+
+  /* ---------- Spacing (8pt) ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ---------- Radii ---------- */
+  --radius-sm:   8px;
+  --radius:      12px;   /* ← canonical card / surface radius */
+  --radius-md:   20px;
+  --radius-lg:   28px;
+  --radius-xl:   40px;
+  --radius-pill: 999px;
+
+  /* ---------- Shadows ---------- */
+  --shadow-card:
+    0 1px 2px rgba(20, 20, 30, .04),
+    0 8px 24px -8px rgba(20, 20, 30, .06);
+  --shadow-card-hover:
+    0 1px 2px rgba(20, 20, 30, .04),
+    0 16px 40px -12px rgba(20, 20, 30, .10);
+  --shadow-pop:
+    0 8px 24px rgba(110, 91, 255, .35);
+  --shadow-inset-soft:
+    inset 0 1px 0 rgba(255,255,255,.6);
+
+  /* ---------- Motion ---------- */
+  --ease-soft:    cubic-bezier(.22, .61, .36, 1);
+  --ease-in-out:  cubic-bezier(.65, 0, .35, 1);
+  --dur-fast:     160ms;
+  --dur-base:     240ms;
+  --dur-slow:     480ms;
+  --dur-float:    6000ms;
+
+  /* ---------- Layout ---------- */
+  --container:    1200px;
+  --gutter:       32px;
+}
+
+/* ============================================================
+   Semantic element styles
+   ============================================================ */
+
+html, body {
+  background: var(--bg-page);
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink-900);
+  margin: 0;
+}
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink-900);
+  margin: 0;
+}
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink-900);
+  margin: 0;
+}
+.display {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink-900);
+}
+p, .p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--ink-500);
+  margin: 0;
+}
+.lead {
+  font-size: var(--fs-lead);
+  color: var(--ink-500);
+  line-height: 1.5;
+}
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--primary-500);
+}
+.meta {
+  font-size: var(--fs-small);
+  color: var(--ink-300);
+}
+code, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+/* ============================================================
+   Inline glyphs — the CUSTOM icon pack for headline ornaments.
+   Inline assets/glyphs/sprite.svg once per page, then use:
+       <svg class="glyph"><use href="#g-spark"/></svg>
+   Variants: g-spark, g-sparkle, g-bolt, g-gem, g-tooth, g-smile, g-burst
+   ============================================================ */
+.glyph {
+  display: inline-block;
+  width: 0.92em;
+  height: 0.92em;
+  vertical-align: -0.08em;
+  color: var(--primary-500);
+  margin: 0 0.08em;
+  flex-shrink: 0;
+}
+.glyph--sm { width: 0.7em; height: 0.7em; }
+.glyph--lg { width: 1.05em; height: 1.05em; }
+
+/* ============================================================
+   Buttons — always pill-shaped, never square
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 14px 24px;
+  border-radius: var(--radius-pill);
+  border: none;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition:
+    background var(--dur-fast) var(--ease-soft),
+    box-shadow var(--dur-base) var(--ease-soft),
+    transform var(--dur-fast) var(--ease-soft);
+  white-space: nowrap;
+}
+.btn--primary {
+  background: var(--primary-500);
+  color: #fff;
+  box-shadow: var(--shadow-card);
+}
+.btn--primary:hover {
+  background: var(--primary-600);
+  box-shadow: var(--shadow-pop);
+}
+.btn--primary:active { transform: scale(.97); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink-900);
+}
+.btn--ghost:hover { background: rgba(20,20,30,.05); }
+
+.btn--white {
+  background: #fff;
+  color: var(--ink-900);
+  box-shadow: var(--shadow-card);
+}
+.btn--white:hover { background: var(--bg-card); }
+
+/* ============================================================
+   Card — the foundational surface
+   ============================================================ */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-card);
+}
+.card--hi    { background: var(--bg-card-hi); }
+.card--inset { background: var(--bg-inset); }
+
+/* ============================================================
+   Input
+   ============================================================ */
+.input {
+  width: 100%;
+  padding: 14px 18px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink-900);
+  transition: border-color var(--dur-fast) var(--ease-soft);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--primary-500);
+}
+
+/* ============================================================
+   Section rhythm
+   ============================================================ */
+.section { padding: var(--space-24) 0; }
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}

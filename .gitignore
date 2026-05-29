@@ -1,0 +1,29 @@
+# ── Dependencies ──────────────────────────────────────
+node_modules/
+
+# ── Nuxt build artifacts ───────────────────────────────
+.nuxt/
+.output/
+dist/
+
+# ── Environment ───────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── OS / Editor ───────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ── Logs ──────────────────────────────────────────────
+*.log
+npm-debug.log*
+
+# ── macOS resource forks (já presentes no repo) ───────
+._*

@@ -1,0 +1,113 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+  body{margin:0;padding:24px;background:var(--bg-card);font-family:var(--font-display)}
+  .stack{display:flex;flex-direction:column;gap:14px}
+  h1{font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.05;color:var(--ink-900);margin:0}
+  h2{font-size:30px;font-weight:600;letter-spacing:-.02em;line-height:1.05;color:var(--ink-900);margin:0}
+  h3{font-size:24px;font-weight:600;letter-spacing:-.02em;line-height:1.1;color:var(--ink-900);margin:0}
+  .pack-title{font-family:var(--font-mono);font-size:10px;color:var(--ink-400);text-transform:uppercase;letter-spacing:.08em;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
+  .matrix{display:grid;grid-template-columns:64px repeat(7,1fr);gap:10px;align-items:center;margin-top:10px}
+  .matrix .name{font-family:var(--font-mono);font-size:10px;color:var(--ink-400)}
+  .matrix .label{font-family:var(--font-mono);font-size:10px;color:var(--ink-400);text-align:center}
+  .cell{display:flex;align-items:center;justify-content:center;height:30px}
+  .cell svg{width:22px;height:22px}
+  /* accent color classes */
+  .c-violet { color: #6E5BFF; }
+  .c-cyan   { color: #2EB3BF; }
+  .c-pink   { color: #E45CA8; }
+  .c-mint   { color: #2EA572; }
+  .c-amber  { color: #E0974A; }
+  .c-ink    { color: #1A1A1F; }
+</style></head><body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0" aria-hidden="true"><defs>
+  <symbol id="g-spark" viewBox="0 0 24 24"><path d="M12 1.5 C 12.4 7, 13.2 9.6, 16 10.5 C 19 11.4, 21.5 11.6, 22.5 12 C 21.5 12.4, 19 12.6, 16 13.5 C 13.2 14.4, 12.4 17, 12 22.5 C 11.6 17, 10.8 14.4, 8 13.5 C 5 12.6, 2.5 12.4, 1.5 12 C 2.5 11.6, 5 11.4, 8 10.5 C 10.8 9.6, 11.6 7, 12 1.5 Z" fill="currentColor"/></symbol>
+  <symbol id="g-sparkle" viewBox="0 0 24 24"><path d="M12 4 C 12.3 8, 12.9 9.7, 14.8 10.3 C 16.8 10.9, 18.4 11.1, 19 12 C 18.4 12.9, 16.8 13.1, 14.8 13.7 C 12.9 14.3, 12.3 16, 12 20 C 11.7 16, 11.1 14.3, 9.2 13.7 C 7.2 13.1, 5.6 12.9, 5 12 C 5.6 11.1, 7.2 10.9, 9.2 10.3 C 11.1 9.7, 11.7 8, 12 4 Z" fill="currentColor"/></symbol>
+  <symbol id="g-bolt" viewBox="0 0 24 24"><path d="M14.2 1.5 L4 13.5 C 3.6 14 3.9 14.7 4.6 14.7 L10.2 14.7 L9.2 21.7 C 9 22.6 10.1 23.1 10.7 22.4 L20.4 11.1 C 20.8 10.6 20.5 9.9 19.8 9.9 L14.5 9.9 L15.6 2.5 C 15.7 1.6 14.7 1 14.2 1.5 Z" fill="currentColor"/></symbol>
+  <symbol id="g-gem" viewBox="0 0 24 24"><path d="M6 3 L18 3 L22 9 L12 22 L2 9 Z" fill="currentColor"/><path d="M9 9 L12 22 L15 9 Z" fill="rgba(255,255,255,.22)"/><path d="M6 3 L9 9 L2 9 Z" fill="rgba(255,255,255,.12)"/><path d="M18 3 L22 9 L15 9 Z" fill="rgba(0,0,0,.12)"/></symbol>
+  <symbol id="g-tooth" viewBox="0 0 24 24"><path d="M12 1.5 C 18 5.5, 18 18.5, 12 22.5 C 6 18.5, 6 5.5, 12 1.5 Z" fill="currentColor"/></symbol>
+  <symbol id="g-smile" viewBox="0 0 24 24"><path d="M4 9 C 6 17, 18 17, 20 9" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/></symbol>
+  <symbol id="g-burst" viewBox="0 0 24 24"><path d="M12 2 C 12.3 6, 12.7 9.7, 14.3 10.7 C 15.7 11.6, 18 11.7, 22 12 C 18 12.3, 15.7 12.4, 14.3 13.3 C 12.7 14.3, 12.3 18, 12 22 C 11.7 18, 11.3 14.3, 9.7 13.3 C 8.3 12.4, 6 12.3, 2 12 C 6 11.7, 8.3 11.6, 9.7 10.7 C 11.3 9.7, 11.7 6, 12 2 Z" fill="currentColor"/></symbol>
+</defs></svg>
+
+<div class="stack">
+  <h1>
+    Supercharge <svg class="glyph c-violet"><use href="#g-bolt"/></svg> Your
+    Smile <svg class="glyph c-pink"><use href="#g-spark"/></svg>
+  </h1>
+  <h2>
+    Whitening <svg class="glyph c-amber"><use href="#g-gem"/></svg>
+    on Steroids <svg class="glyph c-cyan"><use href="#g-sparkle"/></svg>
+  </h2>
+  <h3>
+    Real Talk <svg class="glyph c-mint"><use href="#g-smile"/></svg>
+    from Real <svg class="glyph c-violet"><use href="#g-tooth"/></svg> Smiles
+  </h3>
+
+  <div class="pack-title">7 glyphs × 6 accent colors · use <code>currentColor</code></div>
+
+  <div class="matrix">
+    <span></span>
+    <span class="label">spark</span>
+    <span class="label">sparkle</span>
+    <span class="label">bolt</span>
+    <span class="label">gem</span>
+    <span class="label">tooth</span>
+    <span class="label">smile</span>
+    <span class="label">burst</span>
+
+    <span class="name">violet</span>
+    <span class="cell c-violet"><svg><use href="#g-spark"/></svg></span>
+    <span class="cell c-violet"><svg><use href="#g-sparkle"/></svg></span>
+    <span class="cell c-violet"><svg><use href="#g-bolt"/></svg></span>
+    <span class="cell c-violet"><svg><use href="#g-gem"/></svg></span>
+    <span class="cell c-violet"><svg><use href="#g-tooth"/></svg></span>
+    <span class="cell c-violet"><svg><use href="#g-smile"/></svg></span>
+    <span class="cell c-violet"><svg><use href="#g-burst"/></svg></span>
+
+    <span class="name">cyan</span>
+    <span class="cell c-cyan"><svg><use href="#g-spark"/></svg></span>
+    <span class="cell c-cyan"><svg><use href="#g-sparkle"/></svg></span>
+    <span class="cell c-cyan"><svg><use href="#g-bolt"/></svg></span>
+    <span class="cell c-cyan"><svg><use href="#g-gem"/></svg></span>
+    <span class="cell c-cyan"><svg><use href="#g-tooth"/></svg></span>
+    <span class="cell c-cyan"><svg><use href="#g-smile"/></svg></span>
+    <span class="cell c-cyan"><svg><use href="#g-burst"/></svg></span>
+
+    <span class="name">pink</span>
+    <span class="cell c-pink"><svg><use href="#g-spark"/></svg></span>
+    <span class="cell c-pink"><svg><use href="#g-sparkle"/></svg></span>
+    <span class="cell c-pink"><svg><use href="#g-bolt"/></svg></span>
+    <span class="cell c-pink"><svg><use href="#g-gem"/></svg></span>
+    <span class="cell c-pink"><svg><use href="#g-tooth"/></svg></span>
+    <span class="cell c-pink"><svg><use href="#g-smile"/></svg></span>
+    <span class="cell c-pink"><svg><use href="#g-burst"/></svg></span>
+
+    <span class="name">mint</span>
+    <span class="cell c-mint"><svg><use href="#g-spark"/></svg></span>
+    <span class="cell c-mint"><svg><use href="#g-sparkle"/></svg></span>
+    <span class="cell c-mint"><svg><use href="#g-bolt"/></svg></span>
+    <span class="cell c-mint"><svg><use href="#g-gem"/></svg></span>
+    <span class="cell c-mint"><svg><use href="#g-tooth"/></svg></span>
+    <span class="cell c-mint"><svg><use href="#g-smile"/></svg></span>
+    <span class="cell c-mint"><svg><use href="#g-burst"/></svg></span>
+
+    <span class="name">amber</span>
+    <span class="cell c-amber"><svg><use href="#g-spark"/></svg></span>
+    <span class="cell c-amber"><svg><use href="#g-sparkle"/></svg></span>
+    <span class="cell c-amber"><svg><use href="#g-bolt"/></svg></span>
+    <span class="cell c-amber"><svg><use href="#g-gem"/></svg></span>
+    <span class="cell c-amber"><svg><use href="#g-tooth"/></svg></span>
+    <span class="cell c-amber"><svg><use href="#g-smile"/></svg></span>
+    <span class="cell c-amber"><svg><use href="#g-burst"/></svg></span>
+
+    <span class="name">ink</span>
+    <span class="cell c-ink"><svg><use href="#g-spark"/></svg></span>
+    <span class="cell c-ink"><svg><use href="#g-sparkle"/></svg></span>
+    <span class="cell c-ink"><svg><use href="#g-bolt"/></svg></span>
+    <span class="cell c-ink"><svg><use href="#g-gem"/></svg></span>
+    <span class="cell c-ink"><svg><use href="#g-tooth"/></svg></span>
+    <span class="cell c-ink"><svg><use href="#g-smile"/></svg></span>
+    <span class="cell c-ink"><svg><use href="#g-burst"/></svg></span>
+  </div>
+</div>
+</body></html>

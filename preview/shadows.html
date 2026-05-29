@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+  body{margin:0;padding:32px;background:var(--bg-page)}
+  .row{display:flex;gap:24px;align-items:flex-end;flex-wrap:wrap}
+  .item{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .box{width:120px;height:80px;background:#fff;border-radius:20px}
+  .card{box-shadow:var(--shadow-card)}
+  .hov{box-shadow:var(--shadow-card-hover)}
+  .pop{box-shadow:var(--shadow-pop);background:var(--primary-500)}
+  .name{font-family:var(--font-mono);font-size:11px;color:var(--ink-400)}
+</style></head><body>
+<div class="row">
+  <div class="item"><div class="box card"></div><div class="name">shadow-card</div></div>
+  <div class="item"><div class="box hov"></div><div class="name">shadow-card-hover</div></div>
+  <div class="item"><div class="box pop"></div><div class="name">shadow-pop (violet)</div></div>
+</div>
+</body></html>

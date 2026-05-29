@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+  body{margin:0;padding:28px;background:var(--bg-card)}
+  .row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-end}
+  .item{display:flex;flex-direction:column;align-items:center;gap:6px}
+  .box{width:72px;height:56px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow-card)}
+  .name{font-family:var(--font-mono);font-size:11px;color:var(--ink-400)}
+  .v{font-family:var(--font-mono);font-size:11px;color:var(--ink-700)}
+  .star{color:var(--primary-500);font-weight:700}
+  .pill{width:108px;height:36px;background:var(--primary-500);border-radius:999px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:13px;font-family:var(--font-body)}
+</style></head><body>
+<div class="row">
+  <div class="item"><div class="box" style="border-radius:8px"></div><div class="name">radius-sm</div><div class="v">8</div></div>
+  <div class="item"><div class="box" style="border-radius:12px;border-color:var(--primary-500);border-width:2px;box-shadow:0 0 0 4px rgba(110,91,255,.12),var(--shadow-card)"></div><div class="name"><span class="star">★</span> radius (default)</div><div class="v">12</div></div>
+  <div class="item"><div class="box" style="border-radius:20px"></div><div class="name">radius-md</div><div class="v">20</div></div>
+  <div class="item"><div class="box" style="border-radius:28px"></div><div class="name">radius-lg</div><div class="v">28</div></div>
+  <div class="item"><div class="box" style="border-radius:40px"></div><div class="name">radius-xl</div><div class="v">40</div></div>
+  <div class="item"><div class="pill">pill</div><div class="name">radius-pill</div><div class="v">999</div></div>
+</div>
+</body></html>

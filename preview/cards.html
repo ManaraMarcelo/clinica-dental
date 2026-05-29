@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css"><style>
+  body{margin:0;padding:32px;background:var(--bg-page)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .card h4{font-family:var(--font-display);font-weight:600;font-size:16px;margin:0 0 6px;color:var(--ink-900)}
+  .card p{font-size:14px;color:var(--ink-500);margin:0}
+</style></head><body>
+<div class="grid">
+  <div class="card">
+    <h4>Default Card</h4>
+    <p>Resting on the page surface — soft warm cream, subtle shadow, 28px radius.</p>
+  </div>
+  <div class="card card--hi">
+    <h4>Raised / hover</h4>
+    <p>Brightens to pure white on hover or focus.</p>
+  </div>
+  <div class="card card--inset">
+    <h4>Inset surface</h4>
+    <p>Recessed area inside a parent card — useful for nested content.</p>
+  </div>
+  <div class="card" style="background:var(--primary-500);color:#fff">
+    <h4 style="color:#fff">Brand card</h4>
+    <p style="color:rgba(255,255,255,.85)">For the final CTA — full violet, white type.</p>
+  </div>
+</div>
+</body></html>
