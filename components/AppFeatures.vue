@@ -1,10 +1,10 @@
 <template>
   <section :style="{ paddingBottom: '96px' }">
     <div class="container">
-      <!-- 2-up wide row -->
+      <!-- Linha com 2 colunas -->
       <div :style="{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '12px', marginBottom: '12px' }">
 
-        <AppFeatureCard title="Cavity Radar" sub="We scan early and ping you the moment something's off — no surprise bills.">
+        <AppFeatureCard title="Radar de Cáries" sub="Fazemos varreduras precoces e te avisamos assim que algo muda — sem surpresas na conta.">
           <div :style="demoFrame">
             <div :style="{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 60%, rgba(110,91,255,.18), transparent 60%)' }" />
             <div
@@ -23,7 +23,7 @@
           </div>
         </AppFeatureCard>
 
-        <AppFeatureCard title="Smile Score on Steroids" sub="A live read of your dental health with personalized next steps. No guessing.">
+        <AppFeatureCard title="Nota do Sorriso Turbinada" sub="Uma leitura em tempo real da sua saúde bucal com próximos passos personalizados. Sem achismos.">
           <div :style="demoFrame">
             <div :style="smileScorePill">
               <div :style="{ display: 'flex', gap: '6px' }">
@@ -45,29 +45,29 @@
               </div>
             </div>
             <div :style="{ position: 'absolute', bottom: '14%', left: 0, right: 0, textAlign: 'center', fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'var(--ink-400)' }">
-              SMILE SCORE · 86 / 100
+              NOTA DO SORRISO · 86 / 100
             </div>
           </div>
         </AppFeatureCard>
       </div>
 
-      <!-- 3-up row -->
+      <!-- Linha com 3 colunas -->
       <div :style="{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }">
 
-        <AppFeatureCard title="Auto-Fill That Slaps" sub="Bring your insurance once. We auto-claim every visit so you don't lift a finger.">
+        <AppFeatureCard title="Preenchimento Automático" sub="Traga seu plano uma vez. A gente dá entrada em cada consulta automaticamente, sem você mover um dedo.">
           <div :style="demoFrame">
             <div :style="autoFillBox">
-              <div :style="autoFillField">Name on insurance</div>
-              <div :style="autoFillField">Last cleaning date</div>
+              <div :style="autoFillField">Nome no plano de saúde</div>
+              <div :style="autoFillField">Data da última limpeza</div>
               <div :style="autoFillHighlight">
                 jamie.smith@email.com
-                <span :style="{ position: 'absolute', right: '10px', top: '8px', fontSize: '9px', opacity: 0.7 }">auto · Dental Clinic</span>
+                <span :style="{ position: 'absolute', right: '10px', top: '8px', fontSize: '9px', opacity: 0.7 }">auto · Clínica Dental</span>
               </div>
             </div>
           </div>
         </AppFeatureCard>
 
-        <AppFeatureCard title="Pain-Proof Tech" sub="Lasers, gentle scans, calm rooms. Backed by board-certified specialists.">
+        <AppFeatureCard title="Tecnologia Sem Dor" sub="Lasers, escaneamentos suaves, salas tranquilas. Respaldado por especialistas certificados.">
           <div :style="demoFrame">
             <div :style="{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }">
               <div :style="lockIconStyle">
@@ -85,10 +85,10 @@
           </div>
         </AppFeatureCard>
 
-        <AppFeatureCard title="Check-In by Face" sub="Walk in, smile at the kiosk, sit down. Paperwork's already done.">
+        <AppFeatureCard title="Check-In por Reconhecimento" sub="Entre, sorria para o totem e sente. A papelada já está pronta.">
           <div :style="demoFrame">
             <div :style="{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 50% 55%, rgba(110,91,255,.16), transparent 60%)' }" />
-            <div :style="checkinBadge">Check-in confirmed</div>
+            <div :style="checkinBadge">Check-in confirmado</div>
             <div :style="fingerprintIconStyle">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                 <path d="M12 11v4" />
@@ -114,7 +114,7 @@ const demoFrame = {
   overflow: 'hidden',
 }
 
-/* --- Radar visual --- */
+/* --- Visual do Radar --- */
 const radarCenter = {
   position: 'absolute',
   left: '50%', top: '55%',
@@ -127,7 +127,7 @@ const radarCenter = {
   color: '#fff', fontSize: '22px', fontWeight: 700,
 }
 
-/* --- Smile score visual --- */
+/* --- Visual da Nota do Sorriso --- */
 const smileScorePill = {
   position: 'absolute',
   inset: '18% 8%',
@@ -147,7 +147,7 @@ const eyeIconStyle = {
   color: 'var(--ink-400)',
 }
 
-/* --- Auto-fill visual --- */
+/* --- Visual do Preenchimento Automático --- */
 const autoFillBox = {
   position: 'absolute',
   inset: '14% 12% 14% 12%',
@@ -175,7 +175,7 @@ const autoFillHighlight = {
   position: 'relative',
 }
 
-/* --- Stack / orbit visual --- */
+/* --- Visual de órbita --- */
 const lockIconStyle = {
   width: '72px', height: '72px',
   borderRadius: '999px',
@@ -206,7 +206,7 @@ const orbitItems = ['💎', '🦷', '✦', '✧', '⚡', '💠'].map((glyph, i) 
   }
 })
 
-/* --- Fingerprint visual --- */
+/* --- Visual do Reconhecimento --- */
 const checkinBadge = {
   position: 'absolute', top: '32%', left: '20%',
   background: '#fff',

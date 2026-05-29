@@ -2,8 +2,8 @@
   <section :style="{ padding: '40px 0 96px', position: 'relative' }">
     <div class="container" :style="{ textAlign: 'center', marginBottom: '48px' }">
       <h2 class="h1 reveal">
-        Real Talk <span class="glyph">✧</span> from
-        <br />Real <span class="glyph">🦷</span> Smiles
+        Papo Reto <span class="glyph">✧</span> de
+        <br />Sorrisos <span class="glyph">🦷</span> Reais
       </h2>
     </div>
 
@@ -44,14 +44,14 @@
 
 <script setup lang="ts">
 const quotes = [
-  { q: '0 anxiety, 10/10 smile. They get it.',       h: '@miladentin',   g: '#8A6BFF,#FF6EC4' },
-  { q: 'Whitening that actually slaps. Hooked.',      h: '@kevhasteeth',  g: '#6EDBE0,#8A6BFF' },
-  { q: 'Booked, scanned, polished. 38 min total.',    h: '@emisardo9',    g: '#FFD58A,#FF6EC4' },
-  { q: "First dentist I don't dread. Wild.",          h: '@tobyrenn7',    g: '#B7F0C6,#6EDBE0' },
-  { q: 'Got my retainer same-day. Tech is real.',     h: '@nia.j',        g: '#FF6EC4,#A496FF' },
-  { q: 'Cleaning subscription is genius.',            h: '@drew.codes',   g: '#A496FF,#6EDBE0' },
-  { q: "They text reminders that don't feel dumb.",   h: '@laraax',       g: '#6EDBE0,#B7F0C6' },
-  { q: 'Insurance auto-claim = unreal.',              h: '@samtheman',    g: '#FFD58A,#A496FF' },
+  { q: 'Zero ansiedade, sorriso 10/10. Eles entenderam.',       h: '@miladentin',   g: '#8A6BFF,#FF6EC4' },
+  { q: 'Clareamento que realmente funciona. Viciada.',          h: '@kevhasteeth',  g: '#6EDBE0,#8A6BFF' },
+  { q: 'Agendei, escaneei, saí polida. 38 min no total.',       h: '@emisardo9',    g: '#FFD58A,#FF6EC4' },
+  { q: 'Primeiro dentista que não me dá pavor. Incrível.',      h: '@tobyrenn7',    g: '#B7F0C6,#6EDBE0' },
+  { q: 'Recebi minha contenção no mesmo dia. A tecnologia é real.', h: '@nia.j',    g: '#FF6EC4,#A496FF' },
+  { q: 'A assinatura de limpeza é genial.',                     h: '@drew.codes',   g: '#A496FF,#6EDBE0' },
+  { q: 'Os lembretes por mensagem são úteis de verdade.',        h: '@laraax',       g: '#6EDBE0,#B7F0C6' },
+  { q: 'Reembolso automático do plano = surreal.',              h: '@samtheman',    g: '#FFD58A,#A496FF' },
 ]
 
 const reversedQuotes = [...quotes].reverse()

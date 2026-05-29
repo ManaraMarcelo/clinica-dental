@@ -1,34 +1,34 @@
 <template>
   <section :style="{ paddingTop: '140px', paddingBottom: '80px', position: 'relative' }">
     <div class="container" :style="{ display: 'grid', gridTemplateColumns: '5fr 7fr', gap: '48px', alignItems: 'center' }">
-      <!-- Copy -->
+      <!-- Conteúdo -->
       <div class="reveal">
         <h1 class="display" :style="{ marginBottom: '24px' }">
-          Supercharge Your <span class="glyph">⚡</span> Smile
-          <br />for Ultimate <span class="glyph">✦</span> Confidence
+          Turbine Seu <span class="glyph">⚡</span> Sorriso
+          <br />para uma Confiança <span class="glyph">✦</span> Total
         </h1>
         <p class="lead" :style="{ marginBottom: '32px', maxWidth: '460px' }">
-          No more dentist dread. Dental Clinic delivers calm, modern care that vibes with your
-          always-on life — pain-free cleanings, in-chair whitening, and next-level smile design.
+          Chega de pavor do dentista. A Clínica Dental oferece um atendimento moderno e tranquilo que se encaixa na sua
+          rotina agitada — limpezas sem dor, clareamento na cadeira e design de sorriso de outro nível.
         </p>
         <div :style="{ display: 'flex', gap: '12px', alignItems: 'center' }">
           <button class="btn btn--primary" :style="{ padding: '16px 28px' }">
-            Book a Cleaning <span aria-hidden="true">→</span>
+            Agendar Limpeza <span aria-hidden="true">→</span>
           </button>
           <a href="#" :style="{ color: 'var(--ink-700)', fontSize: '14px', fontWeight: 500, textDecoration: 'none', padding: '12px 8px' }">
-            See pricing →
+            Ver preços →
           </a>
         </div>
         <div :style="{ marginTop: '36px', display: 'flex', gap: '20px', alignItems: 'center', color: 'var(--ink-400)', fontSize: '13px' }">
-          <span>4.9 ★ 1,200+ reviews</span>
+          <span>4,9 ★ +1.200 avaliações</span>
           <span :style="{ width: '4px', height: '4px', borderRadius: '999px', background: 'currentColor' }" />
-          <span>Open 7 days</span>
+          <span>Aberto 7 dias</span>
           <span :style="{ width: '4px', height: '4px', borderRadius: '999px', background: 'currentColor' }" />
-          <span>3 locations</span>
+          <span>3 unidades</span>
         </div>
       </div>
 
-      <!-- Illustration -->
+      <!-- Ilustração -->
       <div :style="illustrationWrap">
         <div :style="stageHighlight" />
         <div
