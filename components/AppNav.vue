@@ -2,8 +2,8 @@
   <div :style="wrapStyle">
     <nav :style="navStyle">
       <a href="#" :style="brandStyle">
-        <img src="/logo-mark.svg" width="24" height="24" alt="Dental Clinic" />
-        <span :style="brandNameStyle">Dental Clinic</span>
+        <img src="~/assets/logo-mark.svg" width="24" height="24" alt="Clínica Dental" />
+        <span :style="brandNameStyle">Clínica Dental</span>
       </a>
       <a
         v-for="link in navLinks"
@@ -11,8 +11,8 @@
         href="#"
         :style="navLinkStyle"
       >{{ link }}</a>
-      <button class="btn btn--primary" style="padding: 9px 18px; font-size: 14px; margin-left: 6px">Book Now</button>
-      <button class="btn btn--ghost" style="padding: 9px 14px; font-size: 14px; background: #fff; box-shadow: var(--shadow-card)">Log In</button>
+      <button class="btn btn--primary" style="padding: 9px 18px; font-size: 14px; margin-left: 6px">Agendar</button>
+      <button class="btn btn--ghost" style="padding: 9px 14px; font-size: 14px; background: #fff; box-shadow: var(--shadow-card)">Entrar</button>
     </nav>
   </div>
 </template>
@@ -20,7 +20,7 @@
 <script setup lang="ts">
 const scrolled = ref(false)
 
-const navLinks = ['Services', 'Pricing', 'Team', 'Stories', 'Support']
+const navLinks = ['Serviços', 'Preços', 'Equipe', 'Histórias', 'Suporte']
 
 const wrapStyle = {
   position: 'fixed',
