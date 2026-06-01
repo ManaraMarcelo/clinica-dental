@@ -2,7 +2,7 @@
   <section :style="{ paddingBottom: '96px' }">
     <div class="container" :style="{ textAlign: 'center' }">
       <h2 class="h1 reveal" :style="{ marginBottom: '40px' }">
-        <span class="glyph">⚡</span> Pronto para Conquistar <span class="glyph">✦</span> o Seu Sorriso?
+        Pronto para Conquistar o Seu Sorriso?
       </h2>
       <div
         class="card reveal"

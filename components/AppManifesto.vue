@@ -10,8 +10,8 @@
         }"
       >
         <h2 class="h1" :style="{ marginBottom: '20px' }">
-          Cáries <span class="glyph">🦷</span> São um Saco.
-          <br />A Gente <span class="glyph">⚡</span> Resolve.
+          Cáries São um Saco.
+          <br />A Gente Resolve.
         </h2>
         <p class="lead" :style="{ maxWidth: '540px', margin: '0 auto', color: 'var(--ink-500)' }">
           Limpezas ruins, papelada sem fim, redes duvidosas? A Clínica Dental entrega uma odontologia moderna

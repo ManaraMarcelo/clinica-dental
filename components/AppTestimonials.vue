@@ -2,8 +2,7 @@
   <section :style="{ padding: '40px 0 96px', position: 'relative' }">
     <div class="container" :style="{ textAlign: 'center', marginBottom: '48px' }">
       <h2 class="h1 reveal">
-        Papo Reto <span class="glyph">✧</span> de
-        <br />Sorrisos <span class="glyph">🦷</span> Reais
+        Papo reto de sorrisos reais
       </h2>
     </div>
 

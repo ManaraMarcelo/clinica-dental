@@ -2,8 +2,8 @@
   <section :style="{ padding: '40px 0 96px' }">
     <div class="container" :style="{ textAlign: 'center', marginBottom: '48px' }">
       <h2 class="h1 reveal">
-        Encontre a Clínica Dental <span class="glyph">✦</span>
-        <br />Onde <span class="glyph">📍</span> Você Estiver
+        Encontre a nossa Clínica
+        <br />Onde Você Estiver
       </h2>
       <p class="lead reveal" :style="{ maxWidth: '520px', margin: '20px auto 0' }">
         Três unidades em São Paulo e uma no seu bolso. Escolha o ambiente, agende o horário.

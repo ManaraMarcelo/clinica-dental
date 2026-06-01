@@ -4,8 +4,8 @@
       <!-- Conteúdo -->
       <div class="reveal">
         <h1 class="display" :style="{ marginBottom: '24px' }">
-          Turbine Seu <span class="glyph">⚡</span> Sorriso
-          <br />para uma Confiança <span class="glyph">✦</span> Total
+          Turbine Seu Sorriso
+          <br />para uma Confiança Total
         </h1>
         <p class="lead" :style="{ marginBottom: '32px', maxWidth: '460px' }">
           Chega de pavor do dentista. A Clínica Dental oferece um atendimento moderno e tranquilo que se encaixa na sua
@@ -30,40 +30,11 @@
 
       <!-- Ilustração -->
       <div :style="illustrationWrap">
-        <div :style="stageHighlight" />
-        <div
-          v-for="disk in iriDisks"
-          :key="disk.delay"
-          :style="disk.style"
+        <img src="../public/family.png" 
+        alt="Foto da familia atendida pela clinica" 
+        width="100%"
+        style="border-radius: 10px;"
         />
-        <div :style="chromeDome">
-          <div :style="domeHighlight" />
-          <div :style="prismStrip" />
-        </div>
-        <svg
-          viewBox="0 0 600 600"
-          :style="{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }"
-        >
-          <defs>
-            <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#FFFFFF" stop-opacity=".95" />
-              <stop offset=".5" stop-color="#E9E6FF" stop-opacity=".85" />
-              <stop offset="1" stop-color="#FFFFFF" stop-opacity=".7" />
-            </linearGradient>
-          </defs>
-          <path
-            d="M40 420 C 180 380, 240 480, 360 440 S 540 380, 580 420"
-            stroke="url(#ribbon)"
-            stroke-width="34"
-            fill="none"
-            stroke-linecap="round"
-            opacity=".75"
-            style="filter: drop-shadow(0 8px 16px rgba(110,91,255,.18))"
-          />
-        </svg>
-        <div class="float-y" :style="{ position: 'absolute', top: '6%', right: '20%', fontSize: '28px', color: 'var(--primary-500)', animationDelay: '0s' }">✦</div>
-        <div class="float-y" :style="{ position: 'absolute', bottom: '14%', right: '8%', fontSize: '22px', color: 'var(--primary-400)', animationDelay: '1.2s' }">✧</div>
-        <div class="float-y" :style="{ position: 'absolute', top: '40%', right: '4%', fontSize: '18px', color: 'var(--iri-pink)', animationDelay: '2.4s' }">✦</div>
       </div>
     </div>
   </section>
