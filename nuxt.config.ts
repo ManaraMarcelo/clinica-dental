@@ -7,6 +7,8 @@ export default defineNuxtConfig({
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
       siteName: process.env.NUXT_PUBLIC_SITE_NAME ?? 'Dental Clinic',
+      userEmail: process.env.NUXT_PUBLIC_USER_EMAIL ?? 'usuario@clinica.com',
+      userPassword: process.env.NUXT_PUBLIC_USER_PASSWORD ?? 'clinica123',
     },
   },
 
