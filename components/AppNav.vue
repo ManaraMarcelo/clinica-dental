@@ -5,12 +5,12 @@
         <img src="~/assets/logo-mark.svg" width="24" height="24" alt="Clínica Bluetooth" />
         <span :style="brandNameStyle">Clínica Bluetooth</span>
       </a>
-      <a
+      <NuxtLink
         v-for="link in navLinks"
-        :key="link"
-        href="#"
+        :key="link.label"
+        :to="link.to"
         :style="navLinkStyle"
-      >{{ link }}</a>
+      >{{ link.label }}</NuxtLink>
       <NuxtLink to="/agendar">
         <button class="btn btn--primary" style="padding: 9px 18px; font-size: 14px; margin-left: 6px">Agendar</button>
       </NuxtLink>
@@ -47,7 +47,13 @@ const { isLoggedIn, userName } = useAuth()
 const showModal = ref(false)
 const scrolled = ref(false)
 
-const navLinks = ['Serviços', 'Preços', 'Equipe', 'Histórias', 'Suporte']
+const navLinks = [
+  { label: 'Serviços', to: '/servicos' },
+  { label: 'Preços', to: '#' },
+  { label: 'Equipe', to: '#' },
+  { label: 'Histórias', to: '#' },
+  { label: 'Suporte', to: '#' },
+]
 
 const wrapStyle = {
   position: 'fixed',
