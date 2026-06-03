@@ -250,7 +250,7 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Agendar Consulta — Clínica Dental',
+  title: 'Agendar Consulta — Clínica Bluetooth',
   description: 'Agende sua consulta online com confirmação imediata. Limpeza, clareamento, ortodontia e muito mais.',
 })
 

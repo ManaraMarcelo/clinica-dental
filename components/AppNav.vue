@@ -49,10 +49,10 @@ const scrolled = ref(false)
 
 const navLinks = [
   { label: 'Serviços', to: '/servicos' },
-  { label: 'Preços', to: '#' },
-  { label: 'Equipe', to: '#' },
-  { label: 'Histórias', to: '#' },
-  { label: 'Suporte', to: '#' },
+  { label: 'Preços', to: '/servicos/#planos' },
+  // { label: 'Equipe', to: '#' },
+  { label: 'Histórias', to: '/#depoimentos' },
+  { label: 'Sobre', to: './docs/nuxtjs_article.html' },
 ]
 
 const wrapStyle = {

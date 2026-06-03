@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Serviços — Clínica Dental',
+  title: 'Serviços — Clínica Bluetooth',
   description: 'Conheça todos os serviços da Clínica Dental: limpeza, clareamento, ortodontia, implantes e muito mais.',
 })
 

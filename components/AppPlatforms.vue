@@ -14,12 +14,7 @@
       <div class="card" :style="{ padding: '16px', background: 'var(--bg-card)' }">
         <!-- Abas -->
         <div :style="tabStrip">
-          <button
-            v-for="loc in locations"
-            :key="loc.id"
-            @click="active = loc.id"
-            :style="tabStyle(loc.id)"
-          >
+          <button v-for="loc in locations" :key="loc.id" @click="active = loc.id" :style="tabStyle(loc.id)">
             <span>{{ loc.icon }}</span>{{ loc.label }}
           </button>
         </div>
@@ -33,52 +28,52 @@
               <span :style="{ width: '10px', height: '10px', borderRadius: '999px', background: '#FFD58A' }" />
               <span :style="{ width: '10px', height: '10px', borderRadius: '999px', background: 'var(--success)' }" />
             </div>
-            <div :style="{ fontSize: '11px', color: 'var(--ink-400)', fontFamily: 'var(--font-mono)', letterSpacing: '.08em', textTransform: 'uppercase', marginBottom: '8px' }">
+            <div
+              :style="{ fontSize: '11px', color: 'var(--ink-400)', fontFamily: 'var(--font-mono)', letterSpacing: '.08em', textTransform: 'uppercase', marginBottom: '8px' }">
               Agenda
             </div>
             <div :style="{ display: 'flex', flexDirection: 'column', gap: '2px' }">
-              <div
-                v-for="(slot, i) in scheduleSlots"
-                :key="i"
-                :style="{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 10px', borderRadius: '12px', background: i === 0 ? '#fff' : 'transparent' }"
-              >
-                <span
-                  v-if="slot.color"
-                  :style="{ width: '14px', height: '14px', borderRadius: '50%', background: slot.color }"
-                />
-                <span
-                  v-else
-                  :style="{ width: '10px', height: '10px', borderRadius: '50%', background: slot.dot, marginLeft: '2px', marginRight: '2px' }"
-                />
-                <span :style="{ fontSize: '13.5px', color: 'var(--ink-700)', fontWeight: 500, flex: 1 }">{{ slot.name }}</span>
-                <span :style="{ fontSize: '11px', color: 'var(--ink-400)', fontFamily: 'var(--font-mono)' }">{{ slot.count }}</span>
+              <div v-for="(slot, i) in scheduleSlots" :key="i"
+                :style="{ display: 'flex', alignItems: 'center', gap: '10px', padding: '8px 10px', borderRadius: '12px', background: i === 0 ? '#fff' : 'transparent' }">
+                <span v-if="slot.color"
+                  :style="{ width: '14px', height: '14px', borderRadius: '50%', background: slot.color }" />
+                <span v-else
+                  :style="{ width: '10px', height: '10px', borderRadius: '50%', background: slot.dot, marginLeft: '2px', marginRight: '2px' }" />
+                <span :style="{ fontSize: '13.5px', color: 'var(--ink-700)', fontWeight: 500, flex: 1 }">{{ slot.name
+                  }}</span>
+                <span :style="{ fontSize: '11px', color: 'var(--ink-400)', fontFamily: 'var(--font-mono)' }">{{
+                  slot.count }}</span>
               </div>
             </div>
           </aside>
 
           <!-- Principal -->
           <main :style="{ padding: '24px' }">
-            <div :style="{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '18px' }">
+            <div
+              :style="{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: '18px' }">
               <h3 :style="{ fontSize: '19px', fontWeight: 700 }">Hoje · {{ currentLoc.label }}</h3>
-              <span :style="{ fontSize: '12px', color: 'var(--ink-400)', fontFamily: 'var(--font-mono)' }">{{ currentLoc.address }}</span>
+              <span :style="{ fontSize: '12px', color: 'var(--ink-400)', fontFamily: 'var(--font-mono)' }">{{
+                currentLoc.address }}</span>
             </div>
             <div :style="progressBar">
               <div :style="{ width: '46%', background: 'var(--success)' }" />
               <div :style="{ width: '32%', background: '#FFD58A' }" />
               <div :style="{ width: '22%', background: '#D14B4B' }" />
             </div>
-            <div :style="{ display: 'flex', gap: '14px', fontSize: '11px', color: 'var(--ink-400)', marginBottom: '20px', fontFamily: 'var(--font-mono)' }">
+            <div
+              :style="{ display: 'flex', gap: '14px', fontSize: '11px', color: 'var(--ink-400)', marginBottom: '20px', fontFamily: 'var(--font-mono)' }">
               <span>● livres 18</span><span>● reservados 12</span><span>● agendados 8</span>
             </div>
             <div :style="{ display: 'flex', flexDirection: 'column', gap: '8px' }">
-              <div
-                v-for="appt in appointments"
-                :key="appt.tag"
-                :style="{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 14px', borderRadius: '12px', background: 'var(--bg-card)' }"
-              >
-                <div :style="{ width: '32px', height: '32px', borderRadius: '8px', background: `linear-gradient(135deg, ${appt.g})`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px' }">{{ appt.logo }}</div>
-                <div :style="{ fontSize: '14px', color: 'var(--ink-900)', fontWeight: 500, flex: 1 }">{{ appt.who }}</div>
-                <div :style="{ fontSize: '12px', color: 'var(--ink-400)', fontFamily: 'var(--font-mono)' }">{{ appt.tag }}</div>
+              <div v-for="appt in appointments" :key="appt.tag"
+                :style="{ display: 'flex', alignItems: 'center', gap: '12px', padding: '12px 14px', borderRadius: '12px', background: 'var(--bg-card)' }">
+                <div
+                  :style="{ width: '32px', height: '32px', borderRadius: '8px', background: `linear-gradient(135deg, ${appt.g})`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '14px' }">
+                  {{ appt.logo }}</div>
+                <div :style="{ fontSize: '14px', color: 'var(--ink-900)', fontWeight: 500, flex: 1 }">{{ appt.who }}
+                </div>
+                <div :style="{ fontSize: '12px', color: 'var(--ink-400)', fontFamily: 'var(--font-mono)' }">{{ appt.tag
+                  }}</div>
               </div>
             </div>
           </main>
@@ -86,33 +81,37 @@
           <!-- Painel direito -->
           <aside :style="rightPanel">
             <div :style="rightPanelIcon">🦷</div>
-            <div :style="{ fontSize: '12px', color: 'var(--ink-400)', fontFamily: 'var(--font-mono)' }">{{ currentLoc.hours }}</div>
-            <div :style="{ fontSize: '17px', fontWeight: 700, marginTop: '4px', marginBottom: '18px', color: 'var(--ink-900)' }">
+            <div :style="{ fontSize: '12px', color: 'var(--ink-400)', fontFamily: 'var(--font-mono)' }">{{
+              currentLoc.hours }}</div>
+            <div
+              :style="{ fontSize: '17px', fontWeight: 700, marginTop: '4px', marginBottom: '18px', color: 'var(--ink-900)' }">
               Próximo horário · 9:30
             </div>
             <div :style="{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '18px' }">
-              <div
-                v-for="row in currentRows"
-                :key="row.label"
-                :style="{ display: 'flex', justifyContent: 'space-between', fontSize: '12.5px' }"
-              >
+              <div v-for="row in currentRows" :key="row.label"
+                :style="{ display: 'flex', justifyContent: 'space-between', fontSize: '12.5px' }">
                 <span :style="{ color: 'var(--ink-400)' }">{{ row.label }}</span>
-                <span :style="{ color: 'var(--ink-900)', fontWeight: 500, fontFamily: 'var(--font-mono)', fontSize: '11.5px' }">{{ row.value }}</span>
+                <span
+                  :style="{ color: 'var(--ink-900)', fontWeight: 500, fontFamily: 'var(--font-mono)', fontSize: '11.5px' }">{{
+                  row.value }}</span>
               </div>
             </div>
             <div :style="warningBadge">
               <span :style="{ width: '8px', height: '8px', borderRadius: '999px', background: 'var(--warning)' }" />
               <span :style="{ fontSize: '12.5px', color: 'var(--ink-700)' }">Recomendamos atualizar o raio-X</span>
-              <span :style="{ marginLeft: 'auto', fontSize: '11px', color: 'var(--primary-500)', fontWeight: 600, cursor: 'pointer' }">Agendar</span>
+              <span
+                :style="{ marginLeft: 'auto', fontSize: '11px', color: 'var(--primary-500)', fontWeight: 600, cursor: 'pointer' }">Agendar</span>
             </div>
           </aside>
         </div>
       </div>
 
       <div :style="{ textAlign: 'center', marginTop: '32px' }">
-        <button class="btn btn--primary" :style="{ padding: '16px 28px' }">
-          Agendar em {{ currentLoc.label }} <span aria-hidden="true">→</span>
-        </button>
+        <NuxtLink to="/agendar">
+          <button class="btn btn--primary" :style="{ padding: '16px 28px' }">
+            Agendar em {{ currentLoc.label }} <span aria-hidden="true">→</span>
+          </button>
+        </NuxtLink>
         <div :style="{ marginTop: '12px', fontSize: '12px', color: 'var(--ink-400)' }">
           Primeira consulta grátis · todos os planos aceitos
         </div>
@@ -123,34 +122,34 @@
 
 <script setup lang="ts">
 const locations = [
-  { id: 'downtown',  label: 'Centro',     icon: '🏙️', address: 'R. Augusta, 1240 · São Paulo',       hours: 'Seg–Sáb · 8h–21h',  chair: 'Sala 03 · Dra. Aline'  },
-  { id: 'jardins',   label: 'Jardins',    icon: '🌿', address: 'Al. Lorena, 880 · São Paulo',         hours: 'Seg–Sex · 9h–19h',  chair: 'Sala 01 · Dr. Bruno'   },
-  { id: 'pinheiros', label: 'Pinheiros',  icon: '🎨', address: 'R. dos Pinheiros, 412 · São Paulo',   hours: 'Ter–Dom · 10h–20h', chair: 'Sala 02 · Dra. Camila' },
-  { id: 'remote',    label: 'Tele-Sorriso', icon: '📱', address: 'Consultas por vídeo · em qualquer lugar', hours: '7 dias · 7h–23h', chair: 'Assíncrono · resposta em 24h' },
+  { id: 'downtown', label: 'Centro', icon: '🏙️', address: 'R. Augusta, 1240 · São Paulo', hours: 'Seg–Sáb · 8h–21h', chair: 'Sala 03 · Dra. Aline' },
+  { id: 'jardins', label: 'Jardins', icon: '🌿', address: 'Al. Lorena, 880 · São Paulo', hours: 'Seg–Sex · 9h–19h', chair: 'Sala 01 · Dr. Bruno' },
+  { id: 'pinheiros', label: 'Pinheiros', icon: '🎨', address: 'R. dos Pinheiros, 412 · São Paulo', hours: 'Ter–Dom · 10h–20h', chair: 'Sala 02 · Dra. Camila' },
+  { id: 'remote', label: 'Tele-Sorriso', icon: '📱', address: 'Consultas por vídeo · em qualquer lugar', hours: '7 dias · 7h–23h', chair: 'Assíncrono · resposta em 24h' },
 ]
 
 const scheduleSlots = [
   { name: 'Todos os horários', count: 38, color: 'linear-gradient(90deg,#6E5BFF,#FF6EC4,#FFD58A,#6EDBE0,#B7F0C6)' },
-  { name: 'Livres',            count: 18, dot: 'var(--success)' },
-  { name: 'Reservados',        count: 12, dot: '#FFD58A' },
-  { name: 'Agendados',         count: 8,  dot: '#D14B4B' },
+  { name: 'Livres', count: 18, dot: 'var(--success)' },
+  { name: 'Reservados', count: 12, dot: '#FFD58A' },
+  { name: 'Agendados', count: 8, dot: '#D14B4B' },
 ]
 
 const appointments = [
-  { who: 'Limpeza · João',          tag: '09:30', logo: '🦷', g: '#8A6BFF,#FF6EC4' },
-  { who: 'Clareamento · Priscila',      tag: '10:15', logo: '💎', g: '#6EDBE0,#8A6BFF' },
-  { who: 'Consulta implante · Leonardo',  tag: '11:00', logo: '✦',  g: '#FFD58A,#A496FF' },
-  { who: 'Alinhadores · Mirella',       tag: '11:45', logo: '✧',  g: '#B7F0C6,#6EDBE0' },
+  { who: 'Limpeza · João', tag: '09:30', logo: '🦷', g: '#8A6BFF,#FF6EC4' },
+  { who: 'Clareamento · Priscila', tag: '10:15', logo: '💎', g: '#6EDBE0,#8A6BFF' },
+  { who: 'Consulta implante · Leonardo', tag: '11:00', logo: '✦', g: '#FFD58A,#A496FF' },
+  { who: 'Alinhadores · Mirella', tag: '11:45', logo: '✧', g: '#B7F0C6,#6EDBE0' },
 ]
 
 const active = ref('downtown')
 
 const currentLoc = computed(() => locations.find(l => l.id === active.value)!)
 const currentRows = computed(() => [
-  { label: 'Dentista',       value: currentLoc.value.chair },
-  { label: 'Paciente',       value: 'ryan.kelly@email.com' },
+  { label: 'Dentista', value: currentLoc.value.chair },
+  { label: 'Paciente', value: 'ryan.kelly@email.com' },
   { label: 'Plano de saúde', value: 'Bradesco Saúde' },
-  { label: 'Última visita',  value: 'há 4 meses' },
+  { label: 'Última visita', value: 'há 4 meses' },
 ])
 
 const tabStyle = (id: string) => ({

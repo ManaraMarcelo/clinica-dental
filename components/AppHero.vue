@@ -1,24 +1,30 @@
 <template>
   <section :style="{ paddingTop: '140px', paddingBottom: '80px', position: 'relative' }">
-    <div class="container" :style="{ display: 'grid', gridTemplateColumns: '5fr 7fr', gap: '48px', alignItems: 'center' }">
+    <div class="container"
+      :style="{ display: 'grid', gridTemplateColumns: '5fr 7fr', gap: '48px', alignItems: 'center' }">
       <!-- Conteúdo -->
       <div class="reveal">
         <h1 class="display" :style="{ marginBottom: '24px' }">
           Turbine Seu Sorriso
         </h1>
         <p class="lead" :style="{ marginBottom: '32px', maxWidth: '460px' }">
-          Chega de pavor do dentista. A Clínica Bluetooth oferece um atendimento moderno e tranquilo que se encaixa na sua
+          Chega de pavor do dentista. A Clínica Bluetooth oferece um atendimento moderno e tranquilo que se encaixa na
+          sua
           rotina agitada — limpezas sem dor, clareamento na cadeira e design de sorriso de outro nível.
         </p>
         <div :style="{ display: 'flex', gap: '12px', alignItems: 'center' }">
-          <button class="btn btn--primary" :style="{ padding: '16px 28px' }">
-            Agendar Limpeza <span aria-hidden="true">→</span>
-          </button>
-          <a href="#" :style="{ color: 'var(--ink-700)', fontSize: '14px', fontWeight: 500, textDecoration: 'none', padding: '12px 8px' }">
+          <NuxtLink to="/agendar">
+            <button class="btn btn--primary" :style="{ padding: '16px 28px' }">
+              Agendar Limpeza <span aria-hidden="true">→</span>
+            </button>
+          </NuxtLink>
+          <a href="/servicos/#planos"
+            :style="{ color: 'var(--ink-700)', fontSize: '14px', fontWeight: 500, textDecoration: 'none', padding: '12px 8px' }">
             Ver preços →
           </a>
         </div>
-        <div :style="{ marginTop: '36px', display: 'flex', gap: '20px', alignItems: 'center', color: 'var(--ink-400)', fontSize: '13px' }">
+        <div
+          :style="{ marginTop: '36px', display: 'flex', gap: '20px', alignItems: 'center', color: 'var(--ink-400)', fontSize: '13px' }">
           <span>4,9 ★ +1.200 avaliações</span>
           <span :style="{ width: '4px', height: '4px', borderRadius: '999px', background: 'currentColor' }" />
           <span>Aberto 7 dias</span>
@@ -29,11 +35,8 @@
 
       <!-- Ilustração -->
       <div :style="illustrationWrap">
-        <img src="../public/family.png" 
-        alt="Foto da familia atendida pela clinica" 
-        width="100%"
-        style="border-radius: 10px;"
-        />
+        <img src="../public/family.png" alt="Foto da familia atendida pela clinica" width="100%"
+          style="border-radius: 10px;" />
       </div>
     </div>
   </section>
@@ -56,8 +59,8 @@ const stageHighlight = {
 }
 
 const iriDisks = [
-  { top: '8%',  left: '12%', size: 160, c1: '#A496FF', c2: '#FF6EC4', delay: 0   },
-  { top: '62%', left: '4%',  size: 140, c1: '#6EDBE0', c2: '#8A6BFF', delay: 1.4 },
+  { top: '8%', left: '12%', size: 160, c1: '#A496FF', c2: '#FF6EC4', delay: 0 },
+  { top: '62%', left: '4%', size: 140, c1: '#6EDBE0', c2: '#8A6BFF', delay: 1.4 },
   { top: '70%', left: '60%', size: 120, c1: '#FF9AD1', c2: '#A496FF', delay: 2.8 },
 ].map(({ top, left, size, c1, c2, delay }) => ({
   delay,
