@@ -1,7 +1,7 @@
 <template>
   <div :style="wrapStyle">
     <nav :style="navStyle">
-      <a href="#" :style="brandStyle">
+      <a href="/" :style="brandStyle">
         <img src="~/assets/logo-mark.svg" width="24" height="24" alt="Clínica Bluetooth" />
         <span :style="brandNameStyle">Clínica Bluetooth</span>
       </a>
@@ -11,8 +11,28 @@
         href="#"
         :style="navLinkStyle"
       >{{ link }}</a>
-      <button class="btn btn--primary" style="padding: 9px 18px; font-size: 14px; margin-left: 6px">Agendar</button>
-      <button class="btn btn--ghost" style="padding: 9px 14px; font-size: 14px; background: #fff; box-shadow: var(--shadow-card)">Entrar</button>
+      <NuxtLink to="/agendar">
+        <button class="btn btn--primary" style="padding: 9px 18px; font-size: 14px; margin-left: 6px">Agendar</button>
+      </NuxtLink>
+            <NuxtLink
+        v-if="isLoggedIn"
+        to="/usuario"
+        :style="avatarLinkStyle"
+        :title="`Olá, ${userName}`"
+      >
+        <span :style="avatarStyle">{{ userName.charAt(0).toUpperCase() }}</span>
+        <span :style="avatarNameStyle">{{ userName }}</span>
+      </NuxtLink>
+
+      <!-- Quando DESLOGADO: botão Entrar abre modal -->
+      <button
+        v-else
+        class="btn btn--ghost"
+        style="padding: 9px 14px; font-size: 14px; background: #fff; box-shadow: var(--shadow-card)"
+        @click="showModal = true"
+      >
+        Entrar
+      </button>
     </nav>
   </div>
 </template>
