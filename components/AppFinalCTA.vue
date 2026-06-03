@@ -2,7 +2,7 @@
   <section :style="{ paddingBottom: '96px' }">
     <div class="container" :style="{ textAlign: 'center' }">
       <h2 class="h1 reveal" :style="{ marginBottom: '40px' }">
-        Pronto para Conquistar o Seu Sorriso?
+        Pronto para conquistar o seu novo sorriso?
       </h2>
       <div
         class="card reveal"
@@ -17,7 +17,7 @@
       >
         <div :style="{ textAlign: 'left', flex: 1, minWidth: '280px' }">
           <div :style="{ fontSize: '15px', color: 'var(--ink-900)', fontWeight: 600, lineHeight: 1.4 }">
-            Entre na onda da Clínica Dental. Comece grátis ou vá pro plano premium com 30 dias de teste.
+            Entre na onda da clínica Bluetooth. Comece grátis ou vá pro plano premium com 30 dias de teste.
           </div>
           <div :style="{ fontSize: '13px', color: 'var(--ink-400)', marginTop: '4px' }">
             Sem cartão. Cuidado de verdade, bem rápido.
