@@ -2,8 +2,8 @@
   <div :style="wrapStyle">
     <nav :style="navStyle">
       <a href="#" :style="brandStyle">
-        <img src="~/assets/logo-mark.svg" width="24" height="24" alt="Clínica Dental" />
-        <span :style="brandNameStyle">Clínica Dental</span>
+        <img src="~/assets/logo-mark.svg" width="24" height="24" alt="Clínica Bluetooth" />
+        <span :style="brandNameStyle">Clínica Bluetooth</span>
       </a>
       <a
         v-for="link in navLinks"

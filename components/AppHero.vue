@@ -5,10 +5,9 @@
       <div class="reveal">
         <h1 class="display" :style="{ marginBottom: '24px' }">
           Turbine Seu Sorriso
-          <br />para uma Confiança Total
         </h1>
         <p class="lead" :style="{ marginBottom: '32px', maxWidth: '460px' }">
-          Chega de pavor do dentista. A Clínica Dental oferece um atendimento moderno e tranquilo que se encaixa na sua
+          Chega de pavor do dentista. A Clínica Bluetooth oferece um atendimento moderno e tranquilo que se encaixa na sua
           rotina agitada — limpezas sem dor, clareamento na cadeira e design de sorriso de outro nível.
         </p>
         <div :style="{ display: 'flex', gap: '12px', alignItems: 'center' }">

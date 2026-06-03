@@ -2,7 +2,7 @@
   <section :style="{ padding: '40px 0 96px', position: 'relative' }">
     <div class="container" :style="{ textAlign: 'center', marginBottom: '48px' }">
       <h2 class="h1 reveal">
-        Papo reto de sorrisos reais
+        Confira o depoimento de nossos clientes
       </h2>
     </div>
 
