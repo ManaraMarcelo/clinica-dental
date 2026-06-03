@@ -10,11 +10,11 @@
         }"
       >
         <h2 class="h1" :style="{ marginBottom: '20px' }">
-          Cáries São um Saco.
-          <br />A Gente Resolve.
+          Problemas com cáries?.
+          <br />A gente resolve!.
         </h2>
         <p class="lead" :style="{ maxWidth: '540px', margin: '0 auto', color: 'var(--ink-500)' }">
-          Limpezas ruins, papelada sem fim, redes duvidosas? A Clínica Dental entrega uma odontologia moderna
+          Limpezas ruins, papelada sem fim, redes duvidosas? A Clínica Bluetooth entrega uma odontologia moderna
           e baseada em ciência que combina com o seu estilo de vida conectado. Fique saudável, não seja leiloado.
         </p>
       </div>

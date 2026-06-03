@@ -44,7 +44,8 @@
                 </svg>
               </div>
             </div>
-            <div :style="{ position: 'absolute', bottom: '14%', left: 0, right: 0, textAlign: 'center', fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'var(--ink-400)' }">
+            <div :style="{ position: 'absolute', bottom: '14%', left: 0, right: 0, textAlign: 'center', 
+              fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'var(--ink-400)' }">
               NOTA DO SORRISO · 86 / 100
             </div>
           </div>
@@ -54,14 +55,16 @@
       <!-- Linha com 3 colunas -->
       <div :style="{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }">
 
-        <AppFeatureCard title="Preenchimento Automático" sub="Traga seu plano uma vez. A gente dá entrada em cada consulta automaticamente, sem você mover um dedo.">
+        <AppFeatureCard 
+        title="Preenchimento Automático" 
+        sub="Traga seu plano uma vez. A gente dá entrada em cada consulta automaticamente, sem você mover um dedo."
+        >
           <div :style="demoFrame">
             <div :style="autoFillBox">
-              <div :style="autoFillField">Nome no plano de saúde</div>
-              <div :style="autoFillField">Data da última limpeza</div>
+              <div :style="autoFillField">Itaú Odonto</div>
+              <div :style="autoFillField">26/05/2026</div>
               <div :style="autoFillHighlight">
-                jamie.smith@email.com
-                <span :style="{ position: 'absolute', right: '10px', top: '8px', fontSize: '9px', opacity: 0.7 }">auto · Clínica Dental</span>
+                jamie.smith@gmail.com
               </div>
             </div>
           </div>

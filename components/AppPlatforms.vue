@@ -2,8 +2,8 @@
   <section :style="{ padding: '40px 0 96px' }">
     <div class="container" :style="{ textAlign: 'center', marginBottom: '48px' }">
       <h2 class="h1 reveal">
-        Encontre a nossa Clínica
-        <br />Onde Você Estiver
+        Encontre a nossa clínica
+        <br />Onde você estiver
       </h2>
       <p class="lead reveal" :style="{ maxWidth: '520px', margin: '20px auto 0' }">
         Três unidades em São Paulo e uma no seu bolso. Escolha o ambiente, agende o horário.
@@ -137,10 +137,10 @@ const scheduleSlots = [
 ]
 
 const appointments = [
-  { who: 'Limpeza · Jamie',          tag: '09:30', logo: '🦷', g: '#8A6BFF,#FF6EC4' },
-  { who: 'Clareamento · Priya',      tag: '10:15', logo: '💎', g: '#6EDBE0,#8A6BFF' },
-  { who: 'Consulta implante · Leo',  tag: '11:00', logo: '✦',  g: '#FFD58A,#A496FF' },
-  { who: 'Alinhadores · Mira',       tag: '11:45', logo: '✧',  g: '#B7F0C6,#6EDBE0' },
+  { who: 'Limpeza · João',          tag: '09:30', logo: '🦷', g: '#8A6BFF,#FF6EC4' },
+  { who: 'Clareamento · Priscila',      tag: '10:15', logo: '💎', g: '#6EDBE0,#8A6BFF' },
+  { who: 'Consulta implante · Leonardo',  tag: '11:00', logo: '✦',  g: '#FFD58A,#A496FF' },
+  { who: 'Alinhadores · Mirella',       tag: '11:45', logo: '✧',  g: '#B7F0C6,#6EDBE0' },
 ]
 
 const active = ref('downtown')

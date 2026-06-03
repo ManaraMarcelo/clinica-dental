@@ -2,9 +2,9 @@
   <footer :style="{ padding: '40px 0 64px', textAlign: 'center' }">
     <div class="container">
       <div :style="{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }">
-        <img src="~/assets/logo-mark.svg" width="28" height="28" alt="Clínica Dental" />
+        <img src="~/assets/logo-mark.svg" width="28" height="28" alt="Clínica Bluetooth" />
         <span :style="{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '18px', color: 'var(--ink-900)', letterSpacing: '-0.01em' }">
-          Clínica Dental
+          Clínica Bluetooth
         </span>
       </div>
 
@@ -27,7 +27,7 @@
       </div>
 
       <div :style="{ fontSize: '12px', color: 'var(--ink-400)', fontFamily: 'var(--font-mono)' }">
-        © 2026 Clínica Dental · Todos os direitos reservados.
+        © 2026 Clínica Bluetooth · Todos os direitos reservados.
       </div>
     </div>
   </footer>
