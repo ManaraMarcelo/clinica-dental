@@ -4,8 +4,6 @@
       <a href="/" :style="brandStyle">
         <img src="~/assets/logo-mark.svg" width="24" height="24" alt="Clínica Bluetooth" />
         <span :style="brandNameStyle">Clínica Bluetooth</span>
-        <img src="~/assets/logo-mark.svg" width="24" height="24" alt="Clínica Dental" />
-        <span :style="brandNameStyle">Clínica Dental</span>
       </a>
       <a
         v-for="link in navLinks"
@@ -16,8 +14,6 @@
       <NuxtLink to="/agendar">
         <button class="btn btn--primary" style="padding: 9px 18px; font-size: 14px; margin-left: 6px">Agendar</button>
       </NuxtLink>
-            <NuxtLink
-      <button class="btn btn--primary" style="padding: 9px 18px; font-size: 14px; margin-left: 6px">Agendar</button>
 
       <!-- Quando LOGADO: avatar + link para /usuario -->
       <NuxtLink
