@@ -8,15 +8,16 @@
           Cuidado Dental que<br>Vai Além da Consulta
         </h1>
         <p :style="leadStyle">
-          De limpezas de rotina a implantes de alta precisão, cada tratamento é pensado para o seu caso. Tecnologia de ponta, equipe certificada, resultado real.
+          De limpezas de rotina a implantes de alta precisão, cada tratamento é pensado para o seu caso. Tecnologia de
+          ponta, equipe certificada, resultado real.
         </p>
         <div :style="ctaRowStyle">
-          <button class="btn btn--primary" :style="{ padding: '14px 28px' }">Agendar Consulta</button>
-          <a
-            href="#planos"
-            class="btn btn--ghost"
-            :style="{ padding: '14px 28px', background: 'var(--bg-card-hi)', boxShadow: 'var(--shadow-card)' }"
-          >Ver Planos</a>
+          <NuxtLink to="/agendar">
+            <button class="btn btn--primary" :style="{ padding: '14px 28px' }">Agendar Consulta</button>
+          </NuxtLink>
+          <a href="#planos" class="btn btn--ghost"
+            :style="{ padding: '14px 28px', background: 'var(--bg-card-hi)', boxShadow: 'var(--shadow-card)' }">Ver
+            Planos</a>
         </div>
       </div>
 
@@ -41,26 +42,30 @@
             <div :style="dividerStyle" />
 
             <div :style="infoRowStyle">
-              <div v-for="info in infos" :key="info.label" :style="{ display: 'flex', flexDirection: 'column', gap: '2px' }">
+              <div v-for="info in infos" :key="info.label"
+                :style="{ display: 'flex', flexDirection: 'column', gap: '2px' }">
                 <span :style="{ fontSize: '11px', color: 'var(--ink-400)' }">{{ info.label }}</span>
                 <span :style="{ fontSize: '13px', fontWeight: 600, color: 'var(--ink-900)' }">{{ info.value }}</span>
               </div>
             </div>
 
             <div :style="progressWrapStyle">
-              <div :style="{ fontSize: '11px', color: 'var(--ink-400)', display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }">
+              <div
+                :style="{ fontSize: '11px', color: 'var(--ink-400)', display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }">
                 <span>Consultas usadas</span>
                 <span :style="{ fontWeight: 600, color: 'var(--ink-700)' }">2 / 4</span>
               </div>
               <div :style="{ height: '5px', background: 'var(--border)', borderRadius: '999px', overflow: 'hidden' }">
-                <div :style="{ width: '50%', height: '100%', background: 'var(--primary-500)', borderRadius: '999px' }" />
+                <div
+                  :style="{ width: '50%', height: '100%', background: 'var(--primary-500)', borderRadius: '999px' }" />
               </div>
             </div>
           </div>
 
           <div :style="bottomBadgeStyle">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6E5BFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6E5BFF" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
             Plano Premium ativo
           </div>
@@ -237,11 +242,24 @@ const bottomBadgeStyle = {
 
 <style scoped>
 @media (max-width: 860px) {
-  .svc-hero { padding-top: 100px !important; padding-bottom: 48px !important; }
-  .hero-inner { grid-template-columns: 1fr !important; gap: 0 !important; }
-  .hero-visual { display: none; }
+  .svc-hero {
+    padding-top: 100px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .hero-visual {
+    display: none;
+  }
 }
+
 @media (max-width: 640px) {
-  .svc-hero { padding-top: 88px !important; }
+  .svc-hero {
+    padding-top: 88px !important;
+  }
 }
 </style>

@@ -4,17 +4,14 @@
       <h2 class="h1 reveal" :style="{ marginBottom: '40px' }">
         Pronto para conquistar o seu novo sorriso?
       </h2>
-      <div
-        class="card reveal"
-        :style="{
-          background: '#fff',
-          padding: '20px 24px',
-          borderRadius: '999px',
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          gap: '24px', maxWidth: '720px', margin: '0 auto',
-          flexWrap: 'wrap',
-        }"
-      >
+      <div class="card reveal" :style="{
+        background: '#fff',
+        padding: '20px 24px',
+        borderRadius: '999px',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        gap: '24px', maxWidth: '720px', margin: '0 auto',
+        flexWrap: 'wrap',
+      }">
         <div :style="{ textAlign: 'left', flex: 1, minWidth: '280px' }">
           <div :style="{ fontSize: '15px', color: 'var(--ink-900)', fontWeight: 600, lineHeight: 1.4 }">
             Entre na onda da clínica Bluetooth. Comece grátis ou vá pro plano premium com 30 dias de teste.
@@ -23,9 +20,11 @@
             Sem cartão. Cuidado de verdade, bem rápido.
           </div>
         </div>
-        <button class="btn btn--primary" :style="{ padding: '14px 28px' }">
-          Agendar Limpeza
-        </button>
+        <NuxtLink to="/agendar">
+          <button class="btn btn--primary" :style="{ padding: '14px 28px' }">
+            Agendar Limpeza
+          </button>
+        </NuxtLink>
       </div>
     </div>
   </section>

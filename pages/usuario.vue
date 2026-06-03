@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Minha Conta — Clínica Dental',
+  title: 'Minha Conta — Clínica Bluetooth',
   description: 'Gerencie suas configurações, plano odontológico e histórico de consultas.',
 })
 

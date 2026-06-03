@@ -7,47 +7,47 @@
           <span :style="popularBadgeStyle">Mais Solicitado</span>
           <h2 class="h2" :style="{ marginBottom: '0' }">Clareamento Dental de Alta Performance</h2>
           <p :style="descStyle">
-            Nosso protocolo combina luz LED de última geração com gel profissional, devolvendo até 8 tons de brancura em uma única sessão de 60 minutos.
+            Nosso protocolo combina luz LED de última geração com gel profissional, devolvendo até 8 tons de brancura em
+            uma única sessão de 60 minutos.
           </p>
           <ul :style="listStyle">
             <li v-for="item in benefits" :key="item" :style="listItemStyle">
               <div :style="checkStyle">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20 6 9 17l-5-5"/>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5" />
                 </svg>
               </div>
               {{ item }}
             </li>
           </ul>
           <div :style="{ display: 'flex', gap: '12px' }">
-            <button class="btn btn--primary" :style="{ padding: '13px 24px' }">Agendar Clareamento</button>
-            <button class="btn btn--ghost" :style="{ padding: '13px 20px', background: 'var(--bg-inset)' }">Saiba mais</button>
+            <NuxtLink to="/agendar">
+              <button class="btn btn--primary" :style="{ padding: '13px 24px' }">Agendar Clareamento</button>
+            </NuxtLink>
+            <button class="btn btn--ghost" :style="{ padding: '13px 20px', background: 'var(--bg-inset)' }">Saiba
+              mais</button>
           </div>
         </div>
 
         <div class="spotlight-visual" :style="visualSideStyle">
           <div :style="visualCardStyle">
-            <div :style="{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }">
+            <div
+              :style="{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }">
               <span :style="{ fontSize: '13px', fontWeight: 600, color: 'var(--ink-900)' }">Resultado esperado</span>
               <span :style="sessionBadgeStyle">1 sessão</span>
             </div>
 
             <div :style="teethRowStyle">
-              <div
-                v-for="(tooth, i) in teeth"
-                :key="i"
-                :style="toothStyle(tooth)"
-              />
+              <div v-for="(tooth, i) in teeth" :key="i" :style="toothStyle(tooth)" />
             </div>
 
             <div :style="{ display: 'flex', gap: '3px', height: '8px', marginTop: '12px' }">
-              <div
-                v-for="i in 8"
-                :key="i"
-                :style="{ flex: 1, borderRadius: '999px', background: `hsl(48, ${Math.round(65 - i * 6)}%, ${20 + i * 9}%)` }"
-              />
+              <div v-for="i in 8" :key="i"
+                :style="{ flex: 1, borderRadius: '999px', background: `hsl(48, ${Math.round(65 - i * 6)}%, ${20 + i * 9}%)` }" />
             </div>
-            <div :style="{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: 'var(--ink-400)', marginTop: '6px' }">
+            <div
+              :style="{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: 'var(--ink-400)', marginTop: '6px' }">
               <span>Antes</span>
               <span :style="{ fontWeight: 600, color: 'var(--ink-700)' }">+8 tons</span>
               <span>Depois</span>
@@ -55,7 +55,9 @@
 
             <div :style="metaGridStyle">
               <div v-for="m in metas" :key="m.label" :style="metaItemStyle">
-                <span :style="{ fontSize: '18px', fontWeight: 800, fontFamily: 'var(--font-display)', color: 'var(--ink-900)', letterSpacing: '-0.02em' }">{{ m.value }}</span>
+                <span
+                  :style="{ fontSize: '18px', fontWeight: 800, fontFamily: 'var(--font-display)', color: 'var(--ink-900)', letterSpacing: '-0.02em' }">{{
+                  m.value }}</span>
                 <span :style="{ fontSize: '11px', color: 'var(--ink-400)' }">{{ m.label }}</span>
               </div>
             </div>
@@ -209,9 +211,15 @@ const metaItemStyle = {
     gap: 32px !important;
     padding: 32px !important;
   }
-  .spotlight-visual { order: -1; }
+
+  .spotlight-visual {
+    order: -1;
+  }
 }
+
 @media (max-width: 640px) {
-  .spotlight-inner { padding: 24px !important; }
+  .spotlight-inner {
+    padding: 24px !important;
+  }
 }
 </style>
