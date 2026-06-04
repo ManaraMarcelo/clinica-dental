@@ -42,7 +42,7 @@ Projeto acadêmico desenvolvido como trabalho de faculdade.
 ### 1. Clone o repositório
 
 ```bash
-git clone <url-do-repositório>
+git clone https://github.com/ManaraMarcelo/clinica-dental
 cd clinica-dental
 ```
 
@@ -86,7 +86,7 @@ Acesse **http://localhost:3000**
 | Variável | Padrão | Descrição |
 |---|---|---|
 | `NUXT_PUBLIC_SITE_URL` | `http://localhost:3000` | URL pública do site |
-| `NUXT_PUBLIC_SITE_NAME` | `Dental Clinic` | Nome do site (usado em meta tags) |
+| `NUXT_PUBLIC_SITE_NAME` | `Clinica Bluetooth` | Nome do site (usado em meta tags) |
 | `PORT` | `3000` | Porta do servidor de desenvolvimento |
 
 > Copie `.env.example` para `.env` e ajuste os valores. O arquivo `.env` **não é versionado**.
@@ -97,29 +97,90 @@ Acesse **http://localhost:3000**
 
 ```
 clinica-dental/
-├── app.vue                      # Raiz do app — renderiza <NuxtPage />
-├── nuxt.config.ts               # Configuração do Nuxt (CSS global, head, runtimeConfig)
-├── pages/
-│   └── index.vue                # Rota "/" — orquestra todas as seções
-├── components/                  # Auto-importados pelo Nuxt
-│   ├── AppNav.vue               # Nav flutuante com blur no scroll
-│   ├── AppHero.vue              # Hero com ilustração CSS + glyphs animados
-│   ├── AppManifesto.vue         # Card wide centralizado
-│   ├── AppFeatureCard.vue       # Card de feature reutilizável (usa slot)
-│   ├── AppFeatures.vue          # Grid 2-up + 3-up de funcionalidades
-│   ├── AppTestimonials.vue      # Rail de depoimentos com marquee
-│   ├── AppPlatforms.vue         # Switcher de localidades com dashboard mock
-│   ├── AppFinalCTA.vue          # CTA final
-│   └── AppFooter.vue            # Rodapé com links e redes sociais
-├── composables/
-│   └── useScrollReveal.ts       # IntersectionObserver para fade-in no scroll
-├── assets/
-│   └── css/
-│       └── main.css             # Design tokens + animações + classes globais
-├── public/
-│   ├── logo-mark.svg            # Ícone da marca
-│   └── logo-lockup.svg          # Logo completo
-└── ui_kits/web/                 # Referência original em React JSX (não usado no build)
+├── app.vue
+├── assets
+│   ├── css
+│   │   └── main.css
+│   ├── glyphs
+│   │   ├── bolt.svg
+│   │   ├── burst.svg
+│   │   ├── gem.svg
+│   │   ├── smile.svg
+│   │   ├── sparkle.svg
+│   │   ├── spark.svg
+│   │   └── tooth.svg
+│   ├── logo-lockup.svg
+│   └── logo-mark.svg
+├── colors_and_type.css
+├── components
+│   ├── AppFeatureCard.vue
+│   ├── AppFeatures.vue
+│   ├── AppFinalCTA.vue
+│   ├── AppFooter.vue
+│   ├── AppHero.vue
+│   ├── AppLoginModal.vue
+│   ├── AppManifesto.vue
+│   ├── AppNav.vue
+│   ├── AppPlatforms.vue
+│   ├── AppTestimonials.vue
+│   ├── ServicesFAQ.vue
+│   ├── ServicesGrid.vue
+│   ├── ServicesHero.vue
+│   ├── ServicesPricing.vue
+│   ├── ServicesProcess.vue
+│   ├── ServicesSpotlight.vue
+│   ├── UserAccountTab.vue
+│   ├── UserHistoryTab.vue
+│   ├── UserPlanTab.vue
+│   └── UserSidebar.vue
+├── composables
+│   ├── useAuth.ts
+│   └── useScrollReveal.ts
+├── docs
+│   └── nuxtjs-artigo.pdf
+├── nuxt.config.ts
+├── package.json
+├── pages
+│   ├── agendar.vue
+│   ├── index.vue
+│   ├── servicos.vue
+│   └── usuario.vue
+├── preview
+│   ├── brand-logo.html
+│   ├── buttons.html
+│   ├── cards.html
+│   ├── colors-primary.html
+│   ├── colors-semantic.html
+│   ├── colors-surfaces.html
+│   ├── feature-card.html
+│   ├── inputs.html
+│   ├── navbar.html
+│   ├── radii.html
+│   ├── shadows.html
+│   ├── spacing-scale.html
+│   ├── testimonials.html
+│   ├── type-body.html
+│   ├── type-display.html
+│   └── type-glyphs.html
+├── public
+│   ├── family.png
+│   ├── logo-lockup.svg
+│   └── logo-mark.svg
+├── README.md
+├── ui_kits
+│   └── web
+│       ├── Features.jsx
+│       ├── FinalCTA.jsx
+│       ├── Footer.jsx
+│       ├── Hero.jsx
+│       ├── index.html
+│       ├── Manifesto.jsx
+│       ├── Nav.jsx
+│       ├── Platforms.jsx
+│       ├── README.md
+│       └── Testimonials.jsx
+└── uploads
+    └── db7d943e5691c9cb3fa012a9217e5750.jpg
 ```
 
 ---
