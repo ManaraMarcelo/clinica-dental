@@ -17,11 +17,11 @@
         </div>
 
         <!-- Steps indicator -->
-        <div :style="stepsWrapStyle">
+        <div class="steps-indicator">
           <div
             v-for="(step, i) in steps"
             :key="i"
-            :style="stepItemStyle(i)"
+            class="step-item"
           >
             <div :style="stepCircleStyle(i)">
               <svg v-if="currentStep > i" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -29,30 +29,30 @@
               </svg>
               <span v-else>{{ i + 1 }}</span>
             </div>
-            <span :style="stepLabelStyle(i)">{{ step }}</span>
-            <div v-if="i < steps.length - 1" :style="stepLineStyle(i)" />
+            <span class="step-label" :style="stepLabelStyle(i)">{{ step }}</span>
+            <div v-if="i < steps.length - 1" class="step-line" />
           </div>
         </div>
 
-        <!-- Cards do formulário -->
-        <div :style="formLayoutStyle">
+        <!-- Layout: painel principal + resumo -->
+        <div class="form-layout">
 
           <!-- Painel principal -->
-          <div :style="mainPanelStyle">
+          <div class="main-panel">
 
             <!-- PASSO 1: Serviço -->
             <div v-if="currentStep === 0">
               <h2 class="h3" :style="{ marginBottom: '8px' }">Qual serviço você precisa?</h2>
               <p class="p" :style="{ marginBottom: '28px' }">Selecione um dos serviços abaixo para continuar.</p>
 
-              <div :style="servicesGridStyle">
+              <div class="services-grid">
                 <button
                   v-for="service in services"
                   :key="service.id"
                   :style="serviceCardStyle(service.id)"
                   @click="selectService(service.id)"
                 >
-                  <span :style="serviceIconStyle">{{ service.icon }}</span>
+                  <span class="service-icon" v-html="service.icon" />
                   <span :style="serviceNameStyle">{{ service.name }}</span>
                   <span :style="servicePriceStyle">{{ service.price }}</span>
                   <span :style="serviceDurationStyle">{{ service.duration }}</span>
@@ -68,7 +68,7 @@
               <!-- Seleção de datas -->
               <div :style="{ marginBottom: '32px' }">
                 <p :style="dateLabelStyle">Data</p>
-                <div :style="datesRowStyle">
+                <div class="dates-row">
                   <button
                     v-for="day in availableDays"
                     :key="day.value"
@@ -85,7 +85,7 @@
               <!-- Seleção de horários -->
               <div>
                 <p :style="dateLabelStyle">Horário</p>
-                <div :style="timeSlotsGridStyle">
+                <div class="time-slots-grid">
                   <button
                     v-for="slot in timeSlots"
                     :key="slot.time"
@@ -104,7 +104,7 @@
               <h2 class="h3" :style="{ marginBottom: '8px' }">Seus dados</h2>
               <p class="p" :style="{ marginBottom: '28px' }">Usamos apenas para confirmar sua consulta.</p>
 
-              <div :style="formGridStyle">
+              <div class="form-grid">
                 <div :style="fieldGroupStyle">
                   <label :style="labelStyle">Nome completo</label>
                   <input
@@ -125,7 +125,7 @@
                     @input="applyPhoneMask"
                   />
                 </div>
-                <div :style="{ ...fieldGroupStyle, gridColumn: '1 / -1' }">
+                <div class="field-full" :style="fieldGroupStyle">
                   <label :style="labelStyle">E-mail</label>
                   <input
                     v-model="form.email"
@@ -134,7 +134,7 @@
                     placeholder="maria@email.com"
                   />
                 </div>
-                <div :style="{ ...fieldGroupStyle, gridColumn: '1 / -1' }">
+                <div class="field-full" :style="fieldGroupStyle">
                   <label :style="labelStyle">Observações <span :style="{ color: 'var(--ink-300)', fontWeight: 400 }">(opcional)</span></label>
                   <textarea
                     v-model="form.notes"
@@ -180,7 +180,7 @@
             </div>
 
             <!-- Navegação entre passos -->
-            <div v-if="currentStep < 3" :style="navButtonsStyle">
+            <div v-if="currentStep < 3" class="nav-row" :style="navButtonsStyle">
               <button
                 v-if="currentStep > 0"
                 class="btn btn--ghost"
@@ -201,11 +201,11 @@
           </div>
 
           <!-- Painel lateral: resumo -->
-          <div :style="summaryPanelStyle">
+          <div class="summary-panel">
             <p :style="{ ...dateLabelStyle, marginBottom: '20px' }">Resumo do agendamento</p>
 
             <div v-if="selectedServiceData" :style="summaryItemStyle">
-              <span :style="summaryIconStyle">{{ selectedServiceData.icon }}</span>
+              <span class="summary-icon" v-html="selectedServiceData.icon" />
               <div>
                 <p :style="{ fontWeight: 600, fontSize: '14px', color: 'var(--ink-900)', margin: 0 }">{{ selectedServiceData.name }}</p>
                 <p class="meta">{{ selectedServiceData.duration }} · {{ selectedServiceData.price }}</p>
@@ -214,7 +214,7 @@
             <div v-else :style="summaryPlaceholderStyle">Nenhum serviço selecionado</div>
 
             <div v-if="selectedDate && selectedTime" :style="summaryItemStyle">
-              <span :style="summaryIconStyle">📅</span>
+              <span class="summary-icon" v-html="iconCalendar" />
               <div>
                 <p :style="{ fontWeight: 600, fontSize: '14px', color: 'var(--ink-900)', margin: 0 }">{{ selectedDateLabel }}</p>
                 <p class="meta">às {{ selectedTime }}</p>
@@ -223,7 +223,7 @@
             <div v-else-if="!selectedDate" :style="summaryPlaceholderStyle">Nenhuma data selecionada</div>
 
             <div v-if="form.name" :style="summaryItemStyle">
-              <span :style="summaryIconStyle">👤</span>
+              <span class="summary-icon" v-html="iconUser" />
               <div>
                 <p :style="{ fontWeight: 600, fontSize: '14px', color: 'var(--ink-900)', margin: 0 }">{{ form.name }}</p>
                 <p class="meta">{{ form.phone }}</p>
@@ -266,14 +266,55 @@ const form = reactive({ name: '', phone: '', email: '', notes: '' })
 
 const steps = ['Serviço', 'Data & Hora', 'Seus dados', 'Confirmação']
 
+// ─── Ícones SVG ───────────────────────────────────────────
+const iconCalendar = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>`
+
+const iconUser = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>`
+
 // ─── Dados ────────────────────────────────────────────────
 const services = [
-  { id: 'limpeza',      name: 'Limpeza Dental',     icon: '🦷', price: 'R$ 150',  duration: '45 min' },
-  { id: 'clareamento',  name: 'Clareamento',         icon: '✨', price: 'R$ 450',  duration: '60 min' },
-  { id: 'ortodontia',   name: 'Ortodontia',          icon: '😁', price: 'R$ 280',  duration: '30 min' },
-  { id: 'implante',     name: 'Implante Dental',     icon: '🔬', price: 'R$ 2.800',duration: '90 min' },
-  { id: 'restauracao',  name: 'Restauração',         icon: '🛡️', price: 'R$ 220',  duration: '50 min' },
-  { id: 'consulta',     name: 'Consulta Geral',      icon: '🩺', price: 'R$ 120',  duration: '30 min' },
+  {
+    id: 'limpeza',
+    name: 'Limpeza Dental',
+    icon: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-2.5 0-4.5 1.8-5 4-.4 1.8-.5 3.5-.5 5 0 2.2.5 3.8 1.3 4.7.3.4.7.5 1.1.4.5-.2.9-.7 1.3-1.5.3-.7.9-1.1 1.8-1.1s1.5.4 1.8 1.1c.4.8.8 1.3 1.3 1.5.4.1.8 0 1.1-.4.8-.9 1.3-2.5 1.3-4.7 0-1.5-.1-3.2-.5-5C16.5 3.8 14.5 2 12 2z"/></svg>`,
+    price: 'R$ 150',
+    duration: '45 min',
+  },
+  {
+    id: 'clareamento',
+    name: 'Clareamento',
+    icon: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>`,
+    price: 'R$ 450',
+    duration: '60 min',
+  },
+  {
+    id: 'ortodontia',
+    name: 'Ortodontia',
+    icon: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2"/><path d="M6 20H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2"/><path d="M18 4h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><path d="M18 20h2a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2"/><path d="M8 12h8"/></svg>`,
+    price: 'R$ 280',
+    duration: '30 min',
+  },
+  {
+    id: 'implante',
+    name: 'Implante Dental',
+    icon: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><path d="M12 8v11"/><path d="M9 11h6"/><path d="M8 19h8"/></svg>`,
+    price: 'R$ 2.800',
+    duration: '90 min',
+  },
+  {
+    id: 'restauracao',
+    name: 'Restauração',
+    icon: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>`,
+    price: 'R$ 220',
+    duration: '50 min',
+  },
+  {
+    id: 'consulta',
+    name: 'Consulta Geral',
+    icon: `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 12 2 2 4-4"/></svg>`,
+    price: 'R$ 120',
+    duration: '30 min',
+  },
 ]
 
 const clinicUnits = [
@@ -366,22 +407,6 @@ const headerStyle = {
   marginBottom: '52px',
 }
 
-const stepsWrapStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  gap: '0',
-  marginBottom: '48px',
-  position: 'relative' as const,
-}
-
-const stepItemStyle = (_i: number) => ({
-  display: 'flex',
-  alignItems: 'center',
-  gap: '10px',
-  position: 'relative' as const,
-})
-
 const stepCircleStyle = (i: number) => ({
   width: '32px',
   height: '32px',
@@ -411,43 +436,6 @@ const stepLabelStyle = (i: number) => ({
   transition: 'color 240ms var(--ease-soft)',
 })
 
-const stepLineStyle = (_i: number) => ({
-  width: '40px',
-  height: '1px',
-  background: 'var(--border)',
-  margin: '0 8px',
-  flexShrink: 0,
-})
-
-const formLayoutStyle = {
-  display: 'grid',
-  gridTemplateColumns: '1fr 320px',
-  gap: '24px',
-  alignItems: 'start',
-}
-
-const mainPanelStyle = {
-  background: 'var(--bg-card-hi)',
-  borderRadius: 'var(--radius-lg)',
-  padding: '40px',
-  boxShadow: 'var(--shadow-card)',
-}
-
-const summaryPanelStyle = {
-  background: 'var(--bg-card)',
-  borderRadius: 'var(--radius-lg)',
-  padding: '28px',
-  boxShadow: 'var(--shadow-card)',
-  position: 'sticky' as const,
-  top: '100px',
-}
-
-const servicesGridStyle = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(3, 1fr)',
-  gap: '12px',
-}
-
 const serviceCardStyle = (id: string) => ({
   background: selectedService.value === id ? 'var(--primary-50)' : 'var(--bg-card)',
   border: `2px solid ${selectedService.value === id ? 'var(--primary-500)' : 'var(--border)'}`,
@@ -463,7 +451,6 @@ const serviceCardStyle = (id: string) => ({
   textAlign: 'center' as const,
 })
 
-const serviceIconStyle = { fontSize: '28px', lineHeight: 1 }
 const serviceNameStyle = { fontSize: '14px', fontWeight: 600, color: 'var(--ink-900)' }
 const servicePriceStyle = { fontSize: '13px', fontWeight: 700, color: 'var(--primary-500)' }
 const serviceDurationStyle = { fontSize: '12px', color: 'var(--ink-400)' }
@@ -475,13 +462,6 @@ const dateLabelStyle = {
   letterSpacing: '0.07em',
   color: 'var(--ink-400)',
   marginBottom: '10px',
-}
-
-const datesRowStyle = {
-  display: 'flex',
-  gap: '8px',
-  overflowX: 'auto' as const,
-  paddingBottom: '4px',
 }
 
 const dayButtonStyle = (val: string) => ({
@@ -501,12 +481,6 @@ const dayButtonStyle = (val: string) => ({
   boxShadow: selectedDate.value === val ? '0 0 0 3px rgba(110,91,255,.12)' : 'none',
   flexShrink: 0,
 })
-
-const timeSlotsGridStyle = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(5, 1fr)',
-  gap: '8px',
-}
 
 const timeSlotStyle = (slot: { time: string; available: boolean }) => ({
   padding: '12px',
@@ -529,12 +503,6 @@ const timeSlotStyle = (slot: { time: string; available: boolean }) => ({
   transition: 'all 160ms var(--ease-soft)',
   textAlign: 'center' as const,
 })
-
-const formGridStyle = {
-  display: 'grid',
-  gridTemplateColumns: '1fr 1fr',
-  gap: '16px',
-}
 
 const fieldGroupStyle = {
   display: 'flex',
@@ -566,13 +534,6 @@ const summaryItemStyle = {
   background: 'var(--bg-card-hi)',
   borderRadius: 'var(--radius)',
   boxShadow: 'var(--shadow-card)',
-}
-
-const summaryIconStyle = {
-  fontSize: '22px',
-  flexShrink: 0,
-  width: '36px',
-  textAlign: 'center' as const,
 }
 
 const summaryPlaceholderStyle = {
@@ -632,3 +593,178 @@ const confirmValueStyle = {
   textAlign: 'right' as const,
 }
 </script>
+
+<style scoped>
+/* ── Steps indicator ─────────────────────────────────── */
+.steps-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.step-line {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  margin: 0 8px;
+  flex-shrink: 0;
+}
+
+/* ── Layout ──────────────────────────────────────────── */
+.form-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  align-items: start;
+}
+
+.main-panel {
+  background: var(--bg-card-hi);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-card);
+  min-width: 0;
+}
+
+.summary-panel {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: 100px;
+  min-width: 0;
+}
+
+/* ── Grids internos ──────────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field-full { grid-column: 1 / -1; }
+
+.dates-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Ícones SVG ──────────────────────────────────────── */
+.service-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-500);
+}
+
+.summary-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-500);
+}
+
+/* ── Responsividade ──────────────────────────────────── */
+@media (max-width: 900px) {
+  .form-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-panel {
+    position: static;
+    order: -1; /* Mostra resumo acima do formulário em tablet */
+  }
+}
+
+@media (max-width: 640px) {
+  .main-panel {
+    padding: 24px 20px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .time-slots-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-indicator {
+    margin-bottom: 32px;
+  }
+
+  .step-label {
+    display: none;
+  }
+
+  .step-line {
+    width: 24px;
+    margin: 0 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding-top: 96px !important;
+    padding-bottom: 56px !important;
+  }
+
+  .summary-panel {
+    padding: 20px 16px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .time-slots-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nav-row {
+    flex-direction: column-reverse;
+    align-items: stretch !important;
+    gap: 8px;
+  }
+
+  .nav-row .btn {
+    justify-content: center;
+  }
+}
+</style>

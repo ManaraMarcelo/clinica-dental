@@ -253,7 +253,7 @@ const bottomBadgeStyle = {
   }
 
   .hero-visual {
-    display: none;
+    display: none !important;
   }
 }
 

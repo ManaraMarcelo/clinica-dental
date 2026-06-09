@@ -142,7 +142,10 @@ const stepDescStyle = {
 
 <style scoped>
 @media (max-width: 860px) {
-  .steps-wrap { grid-template-columns: 1fr !important; }
+  .steps-wrap { grid-template-columns: repeat(2, 1fr) !important; }
   .steps-connector { display: none !important; }
+}
+@media (max-width: 560px) {
+  .steps-wrap { grid-template-columns: 1fr !important; }
 }
 </style>

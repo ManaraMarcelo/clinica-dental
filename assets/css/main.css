@@ -130,9 +130,18 @@
   --gutter:    32px;
 }
 
+@media (max-width: 640px) {
+  :root { --gutter: 16px; }
+}
+
 /* ============================================================
    Semantic element styles
    ============================================================ */
+
+html {
+  scroll-padding-top: 90px;
+  scroll-behavior: smooth;
+}
 
 html, body {
   background: var(--bg-page);

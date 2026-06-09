@@ -2,7 +2,7 @@
   <section :style="{ padding: '40px 0' }">
     <div class="container">
       <div
-        class="card reveal"
+        class="card reveal manifesto-card"
         :style="{
           padding: '72px 48px',
           textAlign: 'center',
@@ -21,3 +21,12 @@
     </div>
   </section>
 </template>
+
+<style scoped>
+@media (max-width: 640px) {
+  .manifesto-card { padding: 40px 24px !important; }
+}
+@media (max-width: 480px) {
+  .manifesto-card { padding: 32px 20px !important; }
+}
+</style>

@@ -248,4 +248,15 @@ async function handleSave() {
 @media (max-width: 640px) {
   .form-grid { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 600px) {
+  .form-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+  .form-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
 </style>

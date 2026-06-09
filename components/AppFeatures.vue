@@ -1,7 +1,7 @@
 <template>
   <section :style="{ paddingBottom: '96px' }">
     <div class="container">
-      <div :style="grid2">
+      <div :style="grid2" class="features-grid-2">
         <AppFeatureCard title="Radar de Cáries" sub="Varreduras precoces com alertas em tempo real — sem surpresas na conta.">
           <div :style="demoFrame">
             <div v-for="(size, i) in [52, 90, 128, 166]" :key="i" :style="ringStyle(size, i)" />
@@ -28,7 +28,7 @@
         </AppFeatureCard>
       </div>
 
-      <div :style="grid3">
+      <div :style="grid3" class="features-grid-3">
         <AppFeatureCard title="Preenchimento Automático" sub="Traga seu plano uma vez. A gente entra em cada consulta por você.">
           <div :style="demoFrame">
             <div :style="autofillBox">
@@ -234,5 +234,14 @@ const checkinIcon = {
 @keyframes scanPulse {
   0%, 100% { box-shadow: 0 0 0 8px rgba(110,91,255,.12), 0 10px 24px rgba(110,91,255,.35); }
   50%       { box-shadow: 0 0 0 16px rgba(110,91,255,.06), 0 10px 28px rgba(110,91,255,.40); }
+}
+
+@media (max-width: 860px) {
+  .features-grid-2,
+  .features-grid-3 { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 560px) {
+  .features-grid-2,
+  .features-grid-3 { grid-template-columns: 1fr !important; }
 }
 </style>
