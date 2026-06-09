@@ -9,7 +9,7 @@
       <div class="page-heading reveal">
         <div>
           <span class="eyebrow">Minha Conta</span>
-          <h1 class="page-title">Olá, {{ userName }} 👋</h1>
+          <h1 class="page-title">Olá, {{ userName }}</h1>
           <p class="page-subtitle">Gerencie sua conta, plano e histórico de atendimentos.</p>
         </div>
       </div>
@@ -124,6 +124,19 @@ useScrollReveal()
   .tab-content {
     padding: 24px;
     width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .usuario-main {
+    padding-top: 96px;
+    padding-bottom: 48px;
+  }
+  .tab-content {
+    padding: 20px 16px;
+  }
+  .page-title {
+    font-size: clamp(22px, 6vw, 32px);
   }
 }
 </style>

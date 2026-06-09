@@ -1,6 +1,6 @@
 <template>
   <section :style="{ paddingTop: '140px', paddingBottom: '80px', position: 'relative' }">
-    <div class="container"
+    <div class="container hero-grid"
       :style="{ display: 'grid', gridTemplateColumns: '5fr 7fr', gap: '48px', alignItems: 'center' }">
       <!-- Conteúdo -->
       <div class="reveal">
@@ -113,3 +113,20 @@ const prismStrip = {
   mixBlendMode: 'screen',
 }
 </script>
+
+<style scoped>
+@media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  section {
+    padding-top: 96px !important;
+    padding-bottom: 48px !important;
+  }
+}
+</style>

@@ -11,7 +11,7 @@
     </div>
 
     <div class="container reveal">
-      <div class="card" :style="{ padding: '16px', background: 'var(--bg-card)' }">
+      <div class="card platform-card" :style="{ padding: '16px', background: 'var(--bg-card)' }">
         <!-- Abas -->
         <div :style="tabStrip">
           <button v-for="loc in locations" :key="loc.id" @click="active = loc.id" :style="tabStyle(loc.id)">
@@ -219,3 +219,12 @@ const warningBadge = {
   marginBottom: '18px',
 }
 </script>
+
+<style scoped>
+@media (max-width: 860px) {
+  .platform-card {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+</style>

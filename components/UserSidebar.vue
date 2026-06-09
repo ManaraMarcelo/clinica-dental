@@ -254,4 +254,11 @@ function handleLogout() {
   color: var(--danger);
   background: rgba(209, 75, 75, .06);
 }
+
+@media (max-width: 860px) {
+  .sidebar {
+    width: 100%;
+    position: static;
+  }
+}
 </style>
