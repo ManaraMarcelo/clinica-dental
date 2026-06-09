@@ -34,7 +34,7 @@
       </div>
 
       <!-- Ilustração -->
-      <div :style="illustrationWrap">
+      <div :style="illustrationWrap" class="reveal">
         <img src="../public/family.png" alt="Foto da familia atendida pela clinica" width="100%"
           style="border-radius: 10px;" />
       </div>

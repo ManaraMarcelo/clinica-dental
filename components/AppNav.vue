@@ -88,6 +88,7 @@ const navLinks = [
   { label: 'Serviços', to: '/servicos' },
   { label: 'Preços', to: '/servicos/#planos' },
   { label: 'Histórias', to: '/#depoimentos' },
+  // { label: 'Sobre', to: './docs/nuxtjs_article.html' },
 ]
 
 const wrapStyle = {
