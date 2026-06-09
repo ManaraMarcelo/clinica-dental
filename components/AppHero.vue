@@ -12,7 +12,7 @@
           sua
           rotina agitada — limpezas sem dor, clareamento na cadeira e design de sorriso de outro nível.
         </p>
-        <div :style="{ display: 'flex', gap: '12px', alignItems: 'center' }">
+        <div :style="{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }">
           <NuxtLink to="/agendar">
             <button class="btn btn--primary" :style="{ padding: '16px 28px' }">
               Agendar Limpeza <span aria-hidden="true">→</span>
@@ -24,11 +24,11 @@
           </a>
         </div>
         <div
-          :style="{ marginTop: '36px', display: 'flex', gap: '20px', alignItems: 'center', color: 'var(--ink-400)', fontSize: '13px' }">
+          :style="{ marginTop: '36px', display: 'flex', gap: '16px', rowGap: '8px', alignItems: 'center', color: 'var(--ink-400)', fontSize: '13px', flexWrap: 'wrap' }">
           <span>4,9 ★ +1.200 avaliações</span>
-          <span :style="{ width: '4px', height: '4px', borderRadius: '999px', background: 'currentColor' }" />
+          <span class="stat-sep" :style="{ width: '4px', height: '4px', borderRadius: '999px', background: 'currentColor' }" />
           <span>Aberto 7 dias</span>
-          <span :style="{ width: '4px', height: '4px', borderRadius: '999px', background: 'currentColor' }" />
+          <span class="stat-sep" :style="{ width: '4px', height: '4px', borderRadius: '999px', background: 'currentColor' }" />
           <span>3 unidades</span>
         </div>
       </div>

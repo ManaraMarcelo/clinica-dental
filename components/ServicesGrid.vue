@@ -215,7 +215,7 @@ const badge = (plan: string) => {
 @media (max-width: 860px) {
   .svc-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
-@media (max-width: 520px) {
+@media (max-width: 640px) {
   .svc-grid { grid-template-columns: 1fr !important; }
 }
 </style>

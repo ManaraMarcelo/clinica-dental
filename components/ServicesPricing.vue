@@ -273,5 +273,6 @@ const ctaBtnStyle = (featured: boolean) => ({
 }
 @media (max-width: 640px) {
   .pricing-grid { max-width: 100%; }
+  .plan-card { padding: 24px !important; }
 }
 </style>

@@ -180,7 +180,7 @@
             </div>
 
             <!-- Navegação entre passos -->
-            <div v-if="currentStep < 3" :style="navButtonsStyle">
+            <div v-if="currentStep < 3" class="nav-row" :style="navButtonsStyle">
               <button
                 v-if="currentStep > 0"
                 class="btn btn--ghost"
@@ -633,6 +633,7 @@ const confirmValueStyle = {
   border-radius: var(--radius-lg);
   padding: 40px;
   box-shadow: var(--shadow-card);
+  min-width: 0;
 }
 
 .summary-panel {
@@ -642,6 +643,7 @@ const confirmValueStyle = {
   box-shadow: var(--shadow-card);
   position: sticky;
   top: 100px;
+  min-width: 0;
 }
 
 /* ── Grids internos ──────────────────────────────────── */
@@ -715,7 +717,7 @@ const confirmValueStyle = {
   }
 
   .time-slots-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .form-grid {
@@ -747,8 +749,22 @@ const confirmValueStyle = {
   }
 
   .services-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .time-slots-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nav-row {
+    flex-direction: column-reverse;
+    align-items: stretch !important;
+    gap: 8px;
+  }
+
+  .nav-row .btn {
+    justify-content: center;
   }
 }
 </style>

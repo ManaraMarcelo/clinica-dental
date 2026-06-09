@@ -7,8 +7,8 @@
     </div>
 
     <div :style="{ position: 'relative', overflow: 'hidden', padding: '12px 0' }">
-      <div :style="fadeLeft" />
-      <div :style="fadeRight" />
+      <div class="fade-left" :style="fadeLeft" />
+      <div class="fade-right" :style="fadeRight" />
 
       <div class="marquee" :style="{ display: 'flex', gap: '14px', width: 'max-content' }">
         <div
@@ -77,3 +77,9 @@ const fadeRight = {
   zIndex: 2, pointerEvents: 'none',
 }
 </script>
+
+<style scoped>
+@media (max-width: 640px) {
+  .fade-left, .fade-right { width: 60px !important; }
+}
+</style>

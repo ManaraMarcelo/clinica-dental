@@ -13,16 +13,18 @@
     <div class="container reveal">
       <div class="card platform-card" :style="{ padding: '16px', background: 'var(--bg-card)' }">
         <!-- Abas -->
-        <div :style="tabStrip">
-          <button v-for="loc in locations" :key="loc.id" @click="active = loc.id" :style="tabStyle(loc.id)">
-            <span>{{ loc.icon }}</span>{{ loc.label }}
-          </button>
+        <div class="tab-scroll-wrap">
+          <div :style="tabStrip">
+            <button v-for="loc in locations" :key="loc.id" @click="active = loc.id" :style="tabStyle(loc.id)">
+              <span>{{ loc.icon }}</span>{{ loc.label }}
+            </button>
+          </div>
         </div>
 
         <!-- Painel principal -->
-        <div :style="dashGrid">
+        <div class="dash-grid" :style="dashGrid">
           <!-- Barra lateral -->
-          <aside :style="sidebarStyle">
+          <aside class="sidebar-col" :style="sidebarStyle">
             <div :style="{ display: 'flex', gap: '6px', marginBottom: '18px' }">
               <span :style="{ width: '10px', height: '10px', borderRadius: '999px', background: '#D14B4B' }" />
               <span :style="{ width: '10px', height: '10px', borderRadius: '999px', background: '#FFD58A' }" />
@@ -79,7 +81,7 @@
           </main>
 
           <!-- Painel direito -->
-          <aside :style="rightPanel">
+          <aside class="right-panel-col" :style="rightPanel">
             <div :style="rightPanelIcon">🦷</div>
             <div :style="{ fontSize: '12px', color: 'var(--ink-400)', fontFamily: 'var(--font-mono)' }">{{
               currentLoc.hours }}</div>
@@ -172,7 +174,7 @@ const tabStyle = (id: string) => ({
 const tabStrip = {
   display: 'flex', gap: '4px', padding: '6px',
   background: 'var(--bg-inset)', borderRadius: '999px',
-  width: 'fit-content', margin: '0 auto 24px',
+  width: 'fit-content', margin: '0 auto',
 }
 
 const dashGrid = {
@@ -221,10 +223,36 @@ const warningBadge = {
 </script>
 
 <style scoped>
+.tab-scroll-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+  margin-bottom: 24px;
+  /* hide scrollbar visually but keep functional */
+  scrollbar-width: none;
+}
+.tab-scroll-wrap::-webkit-scrollbar { display: none; }
+
 @media (max-width: 860px) {
-  .platform-card {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+  .platform-card { overflow-x: hidden; }
+
+  .dash-grid {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
   }
+
+  .sidebar-col {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .right-panel-col {
+    border-left: none !important;
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebar-col { display: none !important; }
 }
 </style>
