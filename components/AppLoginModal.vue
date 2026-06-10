@@ -212,6 +212,7 @@ watch(() => props.modelValue, (v) => {
   position: relative;
   width: 100%;
   max-width: 420px;
+  box-sizing: border-box;
   background: var(--bg-card-hi);
   border-radius: var(--radius-lg);
   padding: 40px 36px 32px;
@@ -336,6 +337,7 @@ watch(() => props.modelValue, (v) => {
 
 .field-input {
   width: 100%;
+  box-sizing: border-box;
   padding: 13px 44px;
   background: var(--bg-inset);
   border: 1.5px solid var(--border);
@@ -383,6 +385,7 @@ watch(() => props.modelValue, (v) => {
 /* ── Submit ────────────────────────────────────────── */
 .modal-submit {
   width: 100%;
+  box-sizing: border-box;
   justify-content: center;
   padding: 14px;
   font-size: 15px;
