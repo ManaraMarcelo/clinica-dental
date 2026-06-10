@@ -513,6 +513,7 @@ NUXT_PUBLIC_USER_PASSWORD=clinica123
 
 ---
 
+
 ## Licença
 
 Projeto acadêmico — uso educacional.  
